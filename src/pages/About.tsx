@@ -1,13 +1,23 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Trophy, Users, Globe2, History } from 'lucide-react';
+// Removed Trophy, Users, Globe2, History as they are no longer used
+import aboutImg from '../assets/about.png'; // Adjust path based on your folder structure
 
 export default function About() {
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-24 bg-slate-950 text-white overflow-hidden relative">
+      {/* Hero Section with Background Image */}
+      <section 
+        className="relative py-32 md:py-48 bg-slate-950 text-white overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.4)), url(${aboutImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'right center'
+        }}
+      >
+        {/* Red accent overlay */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-red/10 skew-x-12 translate-x-20" />
+        
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -16,7 +26,7 @@ export default function About() {
           >
             <h2 className="text-brand-red font-bold uppercase tracking-widest text-xs mb-4">Our Legacy</h2>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">DECADE OF <br />EXCELLENCE.</h1>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-200 text-lg leading-relaxed">
               Founded on the principles of precision and safety, Unique DC Motor Brakes has grown from a specialized workshop to a global leader in industrial braking technology.
             </p>
           </motion.div>
@@ -32,6 +42,7 @@ export default function About() {
               <img 
                 src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200" 
                 className="relative rounded-lg shadow-2xl z-10"
+                alt="Our Workshop"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -62,29 +73,8 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Philosophy */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">The Pillars of Our Success</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {[
-              { icon: History, title: "Legacy", desc: "Built on 10 years of engineering expertise." },
-              { icon: Trophy, title: "Quality", desc: "Rigorous testing protocols for every unit." },
-              { icon: Users, title: "People", desc: "Dedicated team of 100+ precision engineers." },
-              { icon: Globe2, title: "Presence", desc: "Serving industries across 4 continents." }
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl border border-gray-100 hover:shadow-lg transition-all">
-                <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-red">
-                  <item.icon size={32} />
-                </div>
-                <h4 className="font-bold mb-3">{item.title}</h4>
-                <p className="text-slate-500 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+      {/* Philosophy section (The 3/4 boxes) has been removed */}
     </div>
   );
 }

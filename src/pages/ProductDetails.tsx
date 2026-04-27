@@ -102,7 +102,7 @@ export default function ProductDetails() {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-16">
                    <a 
-                    href={`https://wa.me/919999999999?text=${encodeURIComponent(`Hi Unique DC, I am interested in a technical quote for ${productTitle}.`)}`}
+                    href={`https://wa.me/918233268311?text=${encodeURIComponent(`Hi Unique DC, I am interested in a technical quote for ${productTitle}.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-grow flex items-center justify-center gap-3 px-8 py-5 bg-brand-red text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-red/90 transition-all rounded-sm shadow-xl shadow-brand-red/20"

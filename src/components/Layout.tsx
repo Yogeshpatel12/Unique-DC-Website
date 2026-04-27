@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail, MapPin, Linkedin, Facebook, Twitter } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { Menu, X, Phone, Mail, MapPin, Linkedin, Facebook, Twitter, ArrowUpRight, ShieldCheck } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -30,7 +30,7 @@ export const Navbar = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
   };
 
   return (
@@ -66,7 +66,7 @@ export const Navbar = () => {
             
             <motion.div variants={itemVariants}>
               <a 
-                href="https://wa.me/919999999999"
+                href="https://wa.me/918233268311"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-[#128C7E] transition-all shadow-md shadow-green-500/10"
@@ -100,7 +100,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3 }}
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
@@ -115,7 +115,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/919999999999"
+                href="https://wa.me/918233268311"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
@@ -137,96 +137,150 @@ export const Navbar = () => {
 };
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = {
+    engineering: [
+      { name: "DC Disc Brakes", path: "/products" },
+      { name: "Thruster Brakes", path: "/products" },
+      { name: "Marine Systems", path: "/products" },
+    ],
+    connect: [
+      { name: "Legacy & Vision", path: "/about" },
+      { name: "Project Archive", path: "/gallery" },
+      { name: "Global Support", path: "/contact" },
+    ],
+  };
+
   return (
-    <footer className="bg-slate-950 text-slate-400 pt-24 pb-12 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
+    <footer className="relative bg-slate-950 text-slate-400 pt-24 pb-12 overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col items-center mb-20">
+      {/* Top Accent Line */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-red/50 to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        
+        {/* Brand Header */}
+        <div className="flex flex-col items-center mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="logo-shine group"
+            className="relative group"
           >
             <Link to="/">
               <img 
-                src={logo} 
-                alt="UNIQUE DC MOTOR BRAKES" 
-                className="h-12 md:h-16 w-auto transition-transform duration-500 group-hover:scale-110 brightness-0 invert" 
+                src={logo}
+                alt="UNIQUE DC" 
+                className="h-14 md:h-20 w-auto brightness-0 invert opacity-90 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105" 
               />
             </Link>
+            {/* Ambient Glow behind logo */}
+            <div className="absolute -inset-4 bg-brand-red/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
-          <div className="mt-8 text-center">
-            <h3 className="text-white font-black text-[10px] uppercase tracking-[0.6em]">Precision Engineered Stability</h3>
+          <div className="mt-6">
+            <h3 className="text-white/40 font-bold text-[11px] uppercase tracking-[0.8em] text-center">
+              Precision Engineered <span className="text-brand-red/60">Stability</span>
+            </h3>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20 border-t border-white/5 pt-20">
-          <div className="flex flex-col">
-            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-8 border-b border-white/5 pb-4">Legacy</h4>
-            <p className="text-sm leading-relaxed font-medium opacity-80">
-              Setting the global standard for heavy-duty DC motor brakes and industrial safety systems since 1985. Reliability in every rotation.
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 pb-20 border-t border-white/5 pt-16">
+          
+          {/* Column 1: Legacy */}
+          <div className="space-y-6">
+            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] flex items-center gap-2">
+              <span className="w-2 h-2 bg-brand-red" /> Legacy
+            </h4>
+            <p className="text-sm leading-relaxed font-medium text-slate-400/80">
+              Setting the global standard for heavy-duty DC motor brakes and industrial safety systems since 1985. 
+              <span className="block mt-4 text-brand-red font-semibold italic text-xs uppercase tracking-widest">
+                Reliability in every rotation.
+              </span>
             </p>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-8 border-b border-white/5 pb-4">Engineering</h4>
+          {/* Column 2: Engineering */}
+          <div className="space-y-6">
+            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Engineering</h4>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/products" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> DC Disc Brakes</Link></li>
-              <li><Link to="/products" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> Thruster Brakes</Link></li>
-              <li><Link to="/products" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> Marine Systems</Link></li>
+              {footerLinks.engineering.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="group flex items-center justify-between hover:text-white transition-colors">
+                    <span>{link.name}</span>
+                    <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-brand-red" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-8 border-b border-white/5 pb-4">Connect</h4>
+          {/* Column 3: Connect */}
+          <div className="space-y-6">
+            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Connect</h4>
             <ul className="space-y-4 text-sm font-medium">
-              <li><Link to="/about" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> Legacy & Vision</Link></li>
-              <li><Link to="/gallery" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> Project Archive</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-red transition-all flex items-center gap-2 group"><span className="w-0 group-hover:w-4 h-[1px] bg-brand-red transition-all" /> Global Support</Link></li>
+              {footerLinks.connect.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="group flex items-center justify-between hover:text-white transition-colors">
+                    <span>{link.name}</span>
+                    <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-brand-red" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-widest mb-8 border-b border-white/5 pb-4">Headquarters</h4>
-            <ul className="space-y-6 text-sm font-medium">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-brand-red shrink-0" />
-                <span className="leading-relaxed">Industrial Estate, Phase II,<br /><span className="text-white">Mumbai, MH 400001</span></span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-brand-red shrink-0" />
-                <span className="text-white hover:text-brand-red transition-colors cursor-pointer">sales@uniquedcbrakes.com</span>
-              </li>
-            </ul>
-            <div className="flex gap-4 mt-8">
-              <a href="#" className="w-10 h-10 bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all rounded-sm">
-                <Linkedin size={18} />
+          {/* Column 4: Headquarters */}
+          <div className="space-y-6">
+            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Headquarters</h4>
+            <div className="space-y-4 text-sm">
+              <div className="flex gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:border-brand-red/30 transition-colors">
+                <MapPin size={20} className="text-brand-red shrink-0" />
+                <span className="leading-tight">
+                  Power House, Gudli,<br />
+                  <span className="text-white font-semibold">Rajasthan 313024, IN</span>
+                </span>
+              </div>
+              <a href="mailto:unique@dcmotorbrake.com" className="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:border-brand-red/30 transition-colors group">
+                <Mail size={20} className="text-brand-red shrink-0" />
+                <span className="text-white group-hover:text-brand-red transition-colors truncate">unique@dcmotorbrake.com</span>
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-900 border border-slate-800 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all rounded-sm">
-                <Facebook size={18} />
-              </a>
+            </div>
+            
+            {/* Socials */}
+            <div className="flex gap-3 pt-2">
+              {[ {Icon: Linkedin, href: "#"}, {Icon: Facebook, href: "#"} ].map((social, i) => (
+                <a key={i} href={social.href} className="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-brand-red hover:border-brand-red text-white transition-all duration-300">
+                  <social.Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-6">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">© 2026 UNIQUE DC DYNAMICS</span>
-            <div className="flex gap-4">
-              <Link to="/privacy" className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-brand-red">Privacy</Link>
-              <Link to="/terms" className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-brand-red">Terms</Link>
+        {/* Footer Bottom */}
+        <div className="pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600">
+              © {currentYear} UNIQUE DC DYNAMICS
+            </span>
+            <div className="flex gap-6">
+              <Link to="/privacy" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Terms of Service</Link>
             </div>
           </div>
-          <div className="flex gap-4">
-            <div className="px-5 py-2 bg-slate-900/50 border border-slate-800 rounded-sm">
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">ISO 9001:2015</span>
-            </div>
-            <div className="px-5 py-2 bg-slate-900/50 border border-slate-800 rounded-sm">
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">CE CERTIFIED</span>
-            </div>
+
+          <div className="flex gap-3">
+            {[ "ISO 9001:2015", "CE CERTIFIED" ].map((cert) => (
+              <div key={cert} className="flex items-center gap-2 px-4 py-2 bg-slate-900/40 border border-white/5 rounded-full">
+                <ShieldCheck size={12} className="text-brand-red" />
+                <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest">{cert}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

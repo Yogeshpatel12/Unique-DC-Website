@@ -319,7 +319,7 @@ export default function Home() {
                       Download Catalogue
                     </button>
                     <a 
-                      href={`https://wa.me/919999999999?text=${encodeURIComponent("Hi Unique DC, I am interested in your industrial braking solutions. Could you please share your latest price list and catalog?")}`}
+                      href={`https://wa.me/918233268311?text=${encodeURIComponent("Hi Unique DC, I am interested in your industrial braking solutions. Could you please share your latest price list and catalog?")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-brand-red text-white px-10 py-5 rounded-sm font-bold hover:bg-brand-red/90 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2"

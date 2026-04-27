@@ -13,7 +13,7 @@ ISO 9001:2015 CERTIFIED
 
 ${content || "Technical specifications, installation guides, and maintenance protocols for Unique DC Motor Brakes."}
 
-For more information, contact sales@uniquedcbrakes.com
+For more information, contact unique@dcmotorbrake.com
 --------------------------------------------------
 © ${new Date().getFullYear()} UNIQUE DC MOTOR BRAKES
   `;
