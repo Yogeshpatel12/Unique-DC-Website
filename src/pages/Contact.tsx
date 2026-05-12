@@ -1,5 +1,15 @@
-import { motion } from 'motion/react';
-import { Phone, Mail, MapPin, MessageCircle, Clock, ExternalLink, Building2, Globe } from 'lucide-react';
+import { motion } from "motion/react";
+import indiaMartLogo from "../assets/Indiamart_logo.png";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Clock,
+  ExternalLink,
+  Building2,
+  Globe,
+} from "lucide-react";
 
 export default function Contact() {
   const contactMethods = [
@@ -11,7 +21,7 @@ export default function Contact() {
       color: "text-green-600",
       bgColor: "bg-green-50 hover:bg-green-100",
       borderColor: "border-green-200",
-      description: "Instant messaging for quick inquiries"
+      description: "Instant messaging for quick inquiries",
     },
     {
       icon: Phone,
@@ -21,7 +31,7 @@ export default function Contact() {
       color: "text-brand-red",
       bgColor: "bg-red-50 hover:bg-red-100",
       borderColor: "border-red-200",
-      description: "Direct line to our sales engineers"
+      description: "Direct line to our sales engineers",
     },
     {
       icon: Mail,
@@ -31,8 +41,8 @@ export default function Contact() {
       color: "text-blue-600",
       bgColor: "bg-blue-50 hover:bg-blue-100",
       borderColor: "border-blue-200",
-      description: "Technical inquiries and quotes"
-    }
+      description: "Technical inquiries and quotes",
+    },
   ];
 
   return (
@@ -57,7 +67,9 @@ export default function Contact() {
             className="text-center"
           >
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/10 border border-brand-red/20 mb-8">
-              <span className="text-brand-red font-semibold text-sm uppercase tracking-[0.2em]">Get In Touch</span>
+              <span className="text-brand-red font-semibold text-sm uppercase tracking-[0.2em]">
+                Get In Touch
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
@@ -66,8 +78,9 @@ export default function Contact() {
             </h1>
 
             <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12">
-              Connect with our engineering team for custom braking solutions, technical support, or partnership opportunities.
-              We're here to help you achieve operational excellence.
+              Connect with our engineering team for custom braking solutions,
+              technical support, or partnership opportunities. We're here to
+              help you achieve operational excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -104,9 +117,12 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Multiple Ways to Connect</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Multiple Ways to Connect
+            </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Choose the communication method that works best for your schedule and requirements.
+              Choose the communication method that works best for your schedule
+              and requirements.
             </p>
           </motion.div>
 
@@ -115,8 +131,12 @@ export default function Contact() {
               <motion.a
                 key={method.title}
                 href={method.href}
-                target={method.href.startsWith('http') ? '_blank' : undefined}
-                rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                target={method.href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  method.href.startsWith("http")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -125,7 +145,9 @@ export default function Contact() {
                 className={`group relative overflow-hidden rounded-3xl border ${method.borderColor} ${method.bgColor} p-8 transition-all duration-300 hover:shadow-xl`}
               >
                 <div className="relative z-10">
-                  <div className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg mb-6 ${method.color}`}>
+                  <div
+                    className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg mb-6 ${method.color}`}
+                  >
                     <method.icon size={32} />
                   </div>
 
@@ -162,9 +184,13 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Visit Our Headquarters</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  Visit Our Headquarters
+                </h2>
                 <p className="text-slate-600 text-lg leading-relaxed">
-                  Located in the industrial heart of Rajasthan, our facility combines traditional craftsmanship with modern engineering excellence.
+                  Located in the industrial heart of Rajasthan, our facility
+                  combines traditional craftsmanship with modern engineering
+                  excellence.
                 </p>
               </div>
 
@@ -174,10 +200,14 @@ export default function Contact() {
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Registered & Head Office</h4>
+                    <h4 className="font-bold text-slate-900 mb-1">
+                      Registered & Head Office
+                    </h4>
                     <p className="text-slate-600 leading-relaxed">
-                      Unique DC Motor And Brakes<br />
-                      Power House, Gudli<br />
+                      Unique DC Motor And Brakes
+                      <br />
+                      Power House, Gudli
+                      <br />
                       Rajasthan 313024, India
                     </p>
                   </div>
@@ -188,7 +218,9 @@ export default function Contact() {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">Business Hours</h4>
+                    <h4 className="font-bold text-slate-900 mb-1">
+                      Business Hours
+                    </h4>
                     <div className="text-slate-600 space-y-1">
                       <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                       <p>Saturday: 9:00 AM - 1:00 PM</p>
@@ -219,7 +251,9 @@ export default function Contact() {
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
                   <div className="flex items-center gap-2">
                     <MapPin size={16} className="text-brand-red" />
-                    <span className="text-sm font-semibold text-slate-900">Our Location</span>
+                    <span className="text-sm font-semibold text-slate-900">
+                      Our Location
+                    </span>
                   </div>
                 </div>
               </div>
@@ -237,9 +271,12 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Explore Our Marketplace</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Explore Our Marketplace
+            </h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              Discover our complete product catalog and verified business listings on India's largest B2B marketplace.
+              Discover our complete product catalog and verified business
+              listings on India's largest B2B marketplace.
             </p>
           </motion.div>
 
@@ -251,25 +288,25 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
-            className="group block relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 via-white to-orange-50 border border-orange-200 p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500"
+            className="group block relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-300 via-white to-red-300 border border-red-200 p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-200"
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full blur-3xl -translate-y-32 translate-x-32" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-red-200 rounded-full blur-3xl -translate-y-32 translate-x-32" />
             </div>
 
             <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <div className="flex-shrink-0">
                 <div className="relative">
-                  <div className="flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-white font-black text-2xl md:text-3xl shadow-2xl">
-                    IM
+                  <div className="flex h-20 w-20 md:h-24 md:w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white font-black text-2xl md:text-2xl shadow-2xl">
+                    UDMB
                   </div>
-                  <div className="absolute -inset-2 bg-orange-500/20 rounded-3xl blur-lg" />
+                  <div className="absolute -inset-2 bg-red-500/10 rounded-3xl blur-lg" />
                 </div>
               </div>
 
               <div className="flex-1 text-center lg:text-left">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-sm font-semibold mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm font-semibold mb-4">
                   <Globe size={14} className="mr-2" />
                   Verified Business Listing
                 </div>
@@ -277,19 +314,23 @@ export default function Contact() {
                   Visit Our IndiaMART Store
                 </h3>
                 <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl">
-                  Browse our comprehensive product catalog, view detailed specifications, and connect with verified buyers across India.
-                  Fast response guaranteed.
+                  Browse our comprehensive product catalog, view detailed
+                  specifications.
                 </p>
               </div>
 
               <div className="flex-shrink-0">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-orange-500 text-white font-bold uppercase tracking-widest rounded-full shadow-lg hover:bg-orange-600 transition-colors"
-                >
-                  <ExternalLink size={18} />
-                  <span>Visit Store</span>
-                </motion.div>
+                <div className="relative">
+                  <div className="flex items-center justify-center rounded-3xl bg-white p-4 shadow-2xl border border-red-100">
+                    <img
+                      src={indiaMartLogo}
+                      alt="IndiaMART Logo"
+                      className="h-20 md:h-24 w-auto object-contain"
+                    />
+                  </div>
+
+                  <div className="absolute -inset-2 bg-red-200/12 rounded-2xl blur-lg" />
+                </div>
               </div>
             </div>
 

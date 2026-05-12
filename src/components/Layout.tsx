@@ -140,7 +140,7 @@ export const Footer = () => {
   return (
     <footer className="bg-[#05070a] text-slate-400 pt-16 pb-8 relative overflow-hidden border-t border-white/5 font-sans">
       {/* Enhanced Technical Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-transparent to-slate-900 opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.15] pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
       
