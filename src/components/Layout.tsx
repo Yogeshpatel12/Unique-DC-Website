@@ -137,150 +137,137 @@ export const Navbar = () => {
 };
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const footerLinks = {
-    engineering: [
-      { name: "DC Disc Brakes", path: "/products" },
-      { name: "Thruster Brakes", path: "/products" },
-      { name: "Marine Systems", path: "/products" },
-    ],
-    connect: [
-      { name: "Legacy & Vision", path: "/about" },
-      { name: "Project Archive", path: "/gallery" },
-      { name: "Global Support", path: "/contact" },
-    ],
-  };
-
   return (
-    <footer className="relative bg-slate-950 text-slate-400 pt-24 pb-12 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+    <footer className="bg-[#05070a] text-slate-400 pt-16 pb-8 relative overflow-hidden border-t border-white/5 font-sans">
+      {/* Enhanced Technical Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-transparent to-slate-900 opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
       
-      {/* Top Accent Line */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-red/50 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        
-        {/* Brand Header */}
-        <div className="flex flex-col items-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative group"
-          >
-            <Link to="/">
-              <img 
-                src={logo}
-                alt="UNIQUE DC" 
-                className="h-14 md:h-20 w-auto brightness-0 invert opacity-90 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105" 
-              />
-            </Link>
-            {/* Ambient Glow behind logo */}
-            <div className="absolute -inset-4 bg-brand-red/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-          </motion.div>
-          <div className="mt-6">
-            <h3 className="text-white/40 font-bold text-[11px] uppercase tracking-[0.8em] text-center">
-              Precision Engineered <span className="text-brand-red/60">Stability</span>
-            </h3>
-          </div>
-        </div>
-
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 pb-20 border-t border-white/5 pt-16">
-          
-          {/* Column 1: Legacy */}
-          <div className="space-y-6">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] flex items-center gap-2">
-              <span className="w-2 h-2 bg-brand-red" /> Legacy
-            </h4>
-            <p className="text-sm leading-relaxed font-medium text-slate-400/80">
-              Setting the global standard for heavy-duty DC motor brakes and industrial safety systems since 1985. 
-              <span className="block mt-4 text-brand-red font-semibold italic text-xs uppercase tracking-widest">
-                Reliability in every rotation.
-              </span>
-            </p>
-          </div>
-
-          {/* Column 2: Engineering */}
-          <div className="space-y-6">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Engineering</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              {footerLinks.engineering.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.path} className="group flex items-center justify-between hover:text-white transition-colors">
-                    <span>{link.name}</span>
-                    <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-brand-red" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Connect */}
-          <div className="space-y-6">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Connect</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              {footerLinks.connect.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.path} className="group flex items-center justify-between hover:text-white transition-colors">
-                    <span>{link.name}</span>
-                    <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all text-brand-red" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Headquarters */}
-          <div className="space-y-6">
-            <h4 className="text-white font-black text-xs uppercase tracking-[0.2em]">Headquarters</h4>
-            <div className="space-y-4 text-sm">
-              <div className="flex gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:border-brand-red/30 transition-colors">
-                <MapPin size={20} className="text-brand-red shrink-0" />
-                <span className="leading-tight">
-                  Power House, Gudli,<br />
-                  <span className="text-white font-semibold">Rajasthan 313024, IN</span>
-                </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* WhatsApp Support Section - Streamlined */}
+        <div className="mb-8 md:mb-12 pb-8 md:pb-12 border-b border-white/5">
+          <div className="bg-white/[0.01] border border-white/5 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 hover:border-white/10 transition-all group overflow-hidden relative">
+            <div className="absolute inset-0 bg-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col sm:flex-row items-center text-center sm:text-left gap-4 sm:gap-6">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-red/5 border border-brand-red/10 flex items-center justify-center shrink-0">
+                <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-brand-red shadow-[0_0_10px_rgba(255,49,49,0.5)] animate-pulse" />
               </div>
-              <a href="mailto:unique@dcmotorbrake.com" className="flex items-center gap-4 p-4 rounded-lg bg-white/[0.02] border border-white/5 hover:border-brand-red/30 transition-colors group">
-                <Mail size={20} className="text-brand-red shrink-0" />
-                <span className="text-white group-hover:text-brand-red transition-colors truncate">unique@dcmotorbrake.com</span>
-              </a>
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1 tracking-tight">Direct Technical Support</h3>
+                <p className="text-xs md:text-sm text-slate-400">Instant expert consultation for industrial solutions</p>
+              </div>
             </div>
             
-            {/* Socials */}
-            <div className="flex gap-3 pt-2">
-              {[ {Icon: Linkedin, href: "#"}, {Icon: Facebook, href: "#"} ].map((social, i) => (
-                <a key={i} href={social.href} className="w-10 h-10 rounded-full bg-slate-900 border border-white/10 flex items-center justify-center hover:bg-brand-red hover:border-brand-red text-white transition-all duration-300">
-                  <social.Icon size={18} />
-                </a>
-              ))}
-            </div>
+            <a 
+              href="https://wa.me/918233268311"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366]/10 border border-[#25D366]/30 hover:bg-[#25D366] text-[#25D366] hover:text-white rounded-lg transition-all duration-300 font-bold text-sm tracking-widest uppercase shadow-lg shadow-[#25D366]/5"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span>Connect Now</span>
+            </a>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="pt-10 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-600">
-              © {currentYear} UNIQUE DC DYNAMICS
-            </span>
-            <div className="flex gap-6">
-              <Link to="/privacy" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="text-[10px] font-bold uppercase tracking-[0.2em] hover:text-brand-red transition-colors">Terms of Service</Link>
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-y-12 gap-x-8 lg:gap-8 mb-12">
+          {/* Navigation blocks */}
+          <div className="col-span-1 lg:col-span-2">
+            <div className="flex items-center gap-2 mb-6 lg:mb-8">
+              <div className="w-1 h-3 bg-brand-red" />
+              <h4 className="text-white font-bold text-sm uppercase tracking-widest">Solutions</h4>
             </div>
+            <ul className="space-y-3 lg:space-y-4">
+              {["DC Disc Brakes", "Thruster Brakes", "Marine Systems", "Custom Safety", "Maintenance"].map((item) => (
+                <li key={item}>
+                  <Link to="/products" className="text-sm hover:text-brand-red hover:translate-x-1 transition-all duration-300 inline-block font-medium">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="flex gap-3">
-            {[ "ISO 9001:2015", "CE CERTIFIED" ].map((cert) => (
-              <div key={cert} className="flex items-center gap-2 px-4 py-2 bg-slate-900/40 border border-white/5 rounded-full">
-                <ShieldCheck size={12} className="text-brand-red" />
-                <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest">{cert}</span>
+          <div className="col-span-1 lg:col-span-2">
+            <div className="flex items-center gap-2 mb-6 lg:mb-8">
+              <div className="w-1 h-3 bg-brand-red" />
+              <h4 className="text-white font-bold text-sm uppercase tracking-widest">Company</h4>
+            </div>
+            <ul className="space-y-3 lg:space-y-4">
+              {[
+                { name: "Our Profile", path: "/about" },
+                { name: "Project Archive", path: "/gallery" },
+                { name: "Technical Docs", path: "/products" },
+                { name: "Privacy Policy", path: "/privacy" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="text-sm hover:text-brand-red hover:translate-x-1 transition-all duration-300 inline-block font-medium">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Location Block with Map */}
+          <div className="col-span-2 lg:col-span-8">
+            <div className="flex items-center gap-2 mb-6 lg:mb-8">
+              <div className="w-1 h-3 bg-brand-red" />
+              <h4 className="text-white font-bold text-sm uppercase tracking-widest">Our Location</h4>
+            </div>
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Unique+dc+motor+brake+Gudli+Udaipur+Rajasthan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group"
+            >
+              <div className="w-full h-40 sm:h-64 lg:h-48 bg-white/5 border border-white/10 rounded-sm overflow-hidden relative">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14511.442998344585!2d73.83984021287413!3d24.5767597144766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e42d7658c14d%3A0xd64f1d408ba1fcd0!2sGudli%2C%20Rajasthan%20313024!5e0!3m2!1sen!2sin!4v1715501865910!5m2!1sen!2sin" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2)', pointerEvents: 'none' }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                ></iframe>
+                <div className="absolute inset-0 bg-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-sm border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest">
+                    View on Google Maps
+                  </div>
+                </div>
               </div>
-            ))}
+              <p className="mt-4 text-[11px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2 group-hover:text-brand-red transition-colors leading-relaxed">
+                <MapPin size={14} className="text-brand-red shrink-0" />
+                Regd. office & Mfg. Unit gudli, near power house, Udaipur, Rajasthan 313024
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center md:text-left">
+            <span className="flex items-center gap-2">
+              <div className="w-1 h-1 bg-brand-red" />
+              © 2026 UNIQUE DC MOTOR BRAKES
+            </span>
+            {/* Compliance and Terms removed */}
+          </div>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto">
+            <div className="flex gap-3 w-full sm:w-auto justify-center">
+              <div className="flex-1 sm:flex-none px-5 py-2 bg-brand-red text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-red/10 text-center whitespace-nowrap">
+                ISO 9001:2015
+              </div>
+              <div className="flex-1 sm:flex-none px-5 py-2 border border-white/5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] bg-white/[0.02] text-center whitespace-nowrap">
+                MSME CERTIFIED
+              </div>
+            </div>
           </div>
         </div>
       </div>

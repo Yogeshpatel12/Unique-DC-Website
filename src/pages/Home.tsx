@@ -72,14 +72,14 @@ const HeroSection = () => {
 };
 
 const TrustIndicators = () => (
-  <section className="py-24 bg-white border-b border-gray-100">
+  <section className="py-24 bg-white border-b border-gray-200">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">ISO 9001</span>
+          <span className="font-bold text-2xl tracking-tighter text-slate-800">ISO 9001 CERTIFIED</span>
         </div>
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">TÜV SÜD</span>
+          <span className="font-bold text-2xl tracking-tighter text-slate-800">MSME CERTIFIED</span>
         </div>
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
           <span className="font-bold text-2xl tracking-tighter text-slate-800">CE CERTIFIED</span>
