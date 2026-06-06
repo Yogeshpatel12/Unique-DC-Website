@@ -288,7 +288,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -8 }}
-            className="group block relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-300 via-white to-red-300 border border-red-200 p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-200"
+            className="group block relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-white to-white border border-white p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-200"
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">

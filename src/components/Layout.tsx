@@ -12,7 +12,7 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
-const Logo = ({ className = 'h-8 md:h-9 w-auto' }: { className?: string }) => (
+const Logo = ({ className = 'h-8 md:h-9 w-auto block object-contain' }: { className?: string }) => (
   <img src={logo} alt="UNIQUE DC MOTOR BRAKES" className={className} />
 );
 
@@ -42,8 +42,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex items-center h-full sm:pr-8 md:border-r border-gray-100">
-            <Link to="/" className="flex items-center group">
-              <Logo className="h-7 sm:h-8 md:h-10 w-auto transition-transform group-hover:scale-105 duration-300" />
+            <Link to="/" className="flex items-center leading-none group">
+              <Logo className="h-7 sm:h-8 md:h-10 w-auto block transition-transform group-hover:scale-105 duration-300" />
             </Link>
           </div>
 

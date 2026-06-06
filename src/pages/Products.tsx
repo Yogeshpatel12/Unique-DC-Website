@@ -1,234 +1,203 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Search, Filter, ArrowRight, Download, FileText, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { downloadPDF } from '../lib/download';
+  import React from 'react';
+  import { motion, AnimatePresence } from 'motion/react';
+  import { Search, Filter, ArrowRight, Download, FileText, ChevronRight } from 'lucide-react';
+  import { Link } from 'react-router-dom';
+  import { downloadPDF } from '../lib/download';
 
-const categories = ["All Brakes", "Electromagnetic", "Disc Brakes", "Hydraulic", "Custom Brakes"];
+  const categories = ["All Brakes", "Electromagnetic", "Disc Brakes", "Hydraulic", "Custom Brakes"];
 
-const products = [
-  { id: 1, name: "U-DX-1000-PRO", cat: "Electromagnetic", torque: "200 Nm", voltage: "440V DC" },
-  { id: 2, name: "U-DX-2000-PRO", cat: "Disc Brakes", torque: "400 Nm", voltage: "440V DC" },
-  { id: 3, name: "U-DX-3000-PRO", cat: "Electromagnetic", torque: "600 Nm", voltage: "440V DC" },
-  { id: 4, name: "U-DX-4000-PRO", cat: "Hydraulic", torque: "800 Nm", voltage: "440V DC" },
-  { id: 5, name: "U-DX-5000-PRO", cat: "Electromagnetic", torque: "1000 Nm", voltage: "440V DC" },
-  { id: 6, name: "U-DX-6000-PRO", cat: "Disc Brakes", torque: "1200 Nm", voltage: "440V DC" },
-  { id: 7, name: "U-DX-7000-PRO", cat: "Electromagnetic", torque: "1400 Nm", voltage: "440V DC" },
-  { id: 8, name: "U-DX-8000-PRO", cat: "Custom Brakes", torque: "1600 Nm", voltage: "440V DC" },
-];
+  // =========================================================================
+  // PLACEHOLDERS: Change the filenames below to match what is inside public/images/
+  // =========================================================================
+  const products = [
+    { id: 1, name: "U-DX-1000-PRO", cat: "Electromagnetic", torque: "200 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 2, name: "U-DX-2000-PRO", cat: "Disc Brakes", torque: "400 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 3, name: "U-DX-3000-PRO", cat: "Electromagnetic", torque: "600 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 4, name: "U-DX-4000-PRO", cat: "Hydraulic", torque: "800 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 5, name: "U-DX-5000-PRO", cat: "Electromagnetic", torque: "1000 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 6, name: "U-DX-6000-PRO", cat: "Disc Brakes", torque: "1200 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 7, name: "U-DX-7000-PRO", cat: "Electromagnetic", torque: "1400 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 8, name: "U-DX-8000-PRO", cat: "Custom Brakes", torque: "1600 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+  ];
 
-export default function Products() {
-  const [activeCategory, setActiveCategory] = React.useState("All Brakes");
-  const [searchQuery, setSearchQuery] = React.useState("");
+  export default function Products() {
+    const [activeCategory, setActiveCategory] = React.useState("All Brakes");
+    const [searchQuery, setSearchQuery] = React.useState("");
 
-  const filteredProducts = products.filter(p => {
-    const matchesCat = activeCategory === "All Brakes" || p.cat === activeCategory;
-    const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCat && matchesSearch;
-  });
+    const filteredProducts = products.filter(p => {
+      const matchesCat = activeCategory === "All Brakes" || p.cat === activeCategory;
+      const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesCat && matchesSearch;
+    });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05
+    const containerVariants = {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.05
+        }
       }
-    }
-  };
+    };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
+    const itemVariants = {
+      hidden: { opacity: 0, y: 20 },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
 
-  return (
-    <div className="pt-20 bg-white min-h-screen">
-      {/* Hero Header */}
-      <header className="relative bg-slate-950 py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.1),transparent_70%)]" />
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center md:text-left max-w-3xl"
-          >
-            <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Engineering Catalog</h2>
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
-              HEAVY-DUTY <br /><span className="text-metallic-red">BRAKING SOLUTIONS.</span>
-            </h1>
-            <p className="text-slate-400 text-lg font-light leading-relaxed mb-10">
-              Discover our range of high-precision electromagnetic, disc, and hydraulic brakes designed for extreme industrial environments.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <button 
-                onClick={() => downloadPDF("Full Product Catalog", "Complete range of electromagnetic, disc, and hydraulic brakes.")}
-                className="flex items-center gap-3 px-8 py-4 bg-metallic-red text-white text-xs font-bold uppercase tracking-widest hover:shadow-xl hover:shadow-brand-red/20 transition-all rounded-sm"
-              >
-                <Download size={16} /> Full Catalog
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </header>
-
-      {/* Filters Bar */}
-      <div className="sticky top-20 z-40 bg-white border-b border-gray-100 py-6">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar w-full md:w-auto pb-4 md:pb-0">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2.5 rounded-sm text-[10px] font-bold uppercase tracking-widest transition-all whitespace-nowrap ${
-                  activeCategory === cat 
-                    ? 'bg-slate-900 text-white' 
-                    : 'bg-slate-50 text-slate-400 hover:bg-slate-100 hover:text-slate-600'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="relative w-full md:w-72">
-            <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input 
-              type="text"
-              placeholder="Search model number..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-gray-200 pl-12 pr-4 py-3 rounded-sm text-xs font-medium outline-none focus:border-brand-red transition-colors"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Main Grid */}
-      <main className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredProducts.map((product) => (
-                <motion.div
-                  key={product.id}
-                  layout
-                  variants={itemVariants}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="group bg-white flex flex-col"
+    return (
+      <div className="pt-20 bg-white min-h-screen">
+        {/* Hero Header */}
+        <header className="relative bg-slate-950 py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.1),transparent_70%)]" />
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center md:text-left max-w-3xl"
+            >
+              <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Engineering Catalog</h2>
+              <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                HEAVY-DUTY <br /><span className="text-metallic-red">BRAKING SOLUTIONS.</span>
+              </h1>
+              <p className="text-slate-400 text-lg font-light leading-relaxed mb-10">
+                Discover our range of high-precision electromagnetic, disc, and hydraulic brakes designed for extreme industrial environments.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <button 
+                  onClick={() => downloadPDF("Full Product Catalog", "Complete range of electromagnetic, disc, and hydraulic brakes.")}
+                  className="flex items-center gap-3 px-8 py-4 bg-metallic-red text-white text-xs font-bold uppercase tracking-widest hover:shadow-xl hover:shadow-brand-red/20 transition-all rounded-sm"
                 >
-                  <Link to={`/products/${product.id}`} className="block relative aspect-[4/5] bg-slate-50 overflow-hidden mb-6 rounded-sm border border-gray-100 transition-colors group-hover:border-brand-red/20 shadow-sm group-hover:shadow-md">
-                    <img 
-                      src={`https://images.unsplash.com/photo-159742324403d-d1ef50e7a28e?auto=format&fit=crop&q=80&w=600&seed=${product.id}`} 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-500" />
-                    <div className="absolute top-4 left-4">
-                      <span className="text-[9px] font-black tracking-widest uppercase bg-white/90 backdrop-blur px-2 py-1 text-slate-900 border border-slate-200">
-                        {product.cat}
-                      </span>
-                    </div>
-                    
-                    <div className="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <div className="bg-white p-4 shadow-xl border border-gray-50 flex items-center justify-between">
-                         <span className="text-[10px] font-bold uppercase tracking-widest text-slate-900">View Specs</span>
-                         <ArrowRight size={14} className="text-brand-red" />
-                      </div>
-                    </div>
-                  </Link>
-                  
-                  <div className="flex flex-col flex-grow">
-                    <div className="mb-4">
-                      <h3 className="text-lg font-bold text-slate-950 mb-1">{product.name}</h3>
-                      <p className="text-slate-500 text-xs font-medium italic lowercase">Heavy duty magnetic brake</p>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-2 mb-6 border-t border-b border-gray-50 py-3">
-                      <div>
-                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Torque</span>
-                        <span className="text-xs font-bold text-slate-900">{product.torque}</span>
-                      </div>
-                      <div>
-                        <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Voltage</span>
-                        <span className="text-xs font-bold text-slate-900">{product.voltage}</span>
-                      </div>
-                    </div>
+                  <Download size={16} /> Full Catalog
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </header>
 
-                    <div className="flex items-center gap-4 mt-auto">
-                       <button 
-                        onClick={() => downloadPDF(product.name, `Technical datasheet for model ${product.name}.`)}
-                        className="text-slate-400 hover:text-brand-red transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest"
-                       >
-                         <FileText size={14} /> PDF
-                       </button>
-                       <Link to={`/products/${product.id}`} className="ml-auto text-slate-900 hover:text-brand-red transition-all flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
-                         Details <ChevronRight size={14} />
-                       </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-          
-          {filteredProducts.length === 0 && (
-            <div className="py-24 text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">No matching models found.</h3>
-              <p className="text-slate-500 text-sm">Please try adjusting your search or category filters.</p>
-              <button 
-                onClick={() => { setActiveCategory("All Brakes"); setSearchQuery(""); }}
-                className="mt-8 text-brand-red font-bold text-xs uppercase tracking-widest hover:underline"
-              >
-                Clear all filters
-              </button>
-            </div>
-          )}
-        </div>
-      </main>
-
-      {/* Support Section */}
-      <section className="bg-slate-50 border-t border-gray-100 py-32">
-        <div className="max-w-7xl mx-auto px-4">
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-             <div>
-               <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Request Support</h2>
-               <h3 className="text-3xl md:text-5xl font-bold text-slate-950 tracking-tight leading-tight mb-8">
-                 Can't find the exact <br />specification?
-               </h3>
-               <p className="text-slate-600 text-lg font-light leading-relaxed mb-10">
-                 Our engineering department specializes in custom torque ratings, voltage requirements, and non-standard mounting configurations.
-               </p>
-               <Link to="/contact" className="inline-flex items-center gap-4 px-10 py-5 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all rounded-sm">
-                 Consult an Engineer <ArrowRight size={16} />
-               </Link>
-             </div>
-             <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "Price List 2024", icon: FileText },
-                  { label: "Installation Guide", icon: FileText },
-                  { label: "Global Warranty", icon: FileText },
-                  { label: "Technical Docs", icon: FileText },
-                ].map((doc, i) => (
-                  <button 
-                    key={i} 
-                    onClick={() => downloadPDF(doc.label, "Company documentation for industrial products.")}
-                    className="flex flex-col p-8 bg-white border border-gray-100 hover:border-brand-red/30 hover:shadow-lg transition-all text-left"
+        {/* Main Grid */}
+        <main className="py-20">
+          <div className="max-w-7xl mx-auto px-4">
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredProducts.map((product) => (
+                  <motion.div
+                    key={product.id}
+                    layout
+                    variants={itemVariants}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="group bg-white flex flex-col"
                   >
-                    <doc.icon className="text-brand-red mb-6" size={24} />
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Download</span>
-                    <span className="text-sm font-bold text-slate-900">{doc.label}</span>
-                  </button>
+                    <Link to={`/products/${product.id}`} className="block relative aspect-[4/5] bg-slate-50 overflow-hidden mb-6 rounded-sm border border-gray-100 transition-colors group-hover:border-brand-red/20 shadow-sm group-hover:shadow-md">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors duration-500" />
+                      <div className="absolute top-4 left-4">
+                        <span className="text-[9px] font-black tracking-widest uppercase bg-white/90 backdrop-blur px-2 py-1 text-slate-900 border border-slate-200">
+                          {product.cat}
+                        </span>
+                      </div>
+                      
+                      <div className="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        
+                      </div>
+                    </Link>
+                    
+                    <div className="flex flex-col flex-grow">
+                      <div className="mb-4">
+                        <h3 className="text-lg font-bold text-slate-950 mb-1">{product.name}</h3>
+                        <p className="text-slate-500 text-xs font-medium italic">Heavy duty</p>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-2 mb-6 border-t border-b border-gray-50 py-3">
+                        <div>
+                          <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Torque</span>
+                          <span className="text-xs font-bold text-slate-900">{product.torque}</span>
+                        </div>
+                        <div>
+                          <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Voltage</span>
+                          <span className="text-xs font-bold text-slate-900">{product.voltage}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-4 mt-auto">
+                        <button 
+                          onClick={() => downloadPDF(product.name, `Technical datasheet for model ${product.name}.`)}
+                          className="text-slate-400 hover:text-brand-red transition-colors flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest"
+                        >
+                          <FileText size={14} /> PDF
+                        </button>
+                        <Link to={`/products/${product.id}`} className="ml-auto text-slate-900 hover:text-brand-red transition-all flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                          Details <ChevronRight size={14} />
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
                 ))}
-             </div>
-           </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+              </AnimatePresence>
+            </motion.div>
+            
+            {filteredProducts.length === 0 && (
+              <div className="py-24 text-center">
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">No matching models found.</h3>
+                <p className="text-slate-500 text-sm">Please try adjusting your search or category filters.</p>
+                <button 
+                  onClick={() => { setActiveCategory("All Brakes"); setSearchQuery(""); }}
+                  className="mt-8 text-brand-red font-bold text-xs uppercase tracking-widest hover:underline"
+                >
+                  Clear all filters
+                </button>
+              </div>
+            )}
+          </div>
+        </main>
+
+        {/* Support Section */}
+        <section className="bg-slate-50 border-t border-gray-100 py-32">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <div>
+                <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Request Support</h2>
+                <h3 className="text-3xl md:text-5xl font-bold text-slate-950 tracking-tight leading-tight mb-8">
+                  Can't find the exact <br />specification?
+                </h3>
+                <p className="text-slate-600 text-lg font-light leading-relaxed mb-10">
+                  Our engineering department specializes in custom torque ratings, voltage requirements, and non-standard mounting configurations.
+                </p>
+                <Link to="/contact" className="inline-flex items-center gap-4 px-10 py-5 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all rounded-sm">
+                  Contact US <ArrowRight size={16} />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { label: "Price List 2024", icon: FileText },
+                    { label: "Installation Guide", icon: FileText },
+                    { label: "Global Warranty", icon: FileText },
+                    { label: "Technical Docs", icon: FileText },
+                  ].map((doc, i) => (
+                    <button 
+                      key={i} 
+                      onClick={() => downloadPDF(doc.label, "Company documentation for industrial products.")}
+                      className="flex flex-col p-8 bg-white border border-gray-100 hover:bg-red-100 hover:border-brand-red/30 hover:shadow-lg transition-all text-left"
+                    >
+                      <doc.icon className="text-brand-red mb-6" size={24} />
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Download</span>
+                      <span className="text-sm font-bold text-slate-900">{doc.label}</span>
+                    </button>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
