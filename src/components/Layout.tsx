@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/logo.svg';
+import logo from '../assets/LogoUnique.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -41,9 +41,9 @@ export const Navbar = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
-          <div className="flex items-center h-full sm:pr-8 md:border-r border-gray-100">
+          <div className="flex items-center h-full sm:pr-8">
             <Link to="/" className="flex items-center leading-none group">
-              <Logo className="h-7 sm:h-8 md:h-10 w-auto block transition-transform group-hover:scale-105 duration-300" />
+              <Logo className="h-12 sm:h-14 md:h-16 w-auto block transition-transform group-hover:scale-105 duration-300" />
             </Link>
           </div>
 

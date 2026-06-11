@@ -96,26 +96,26 @@ const HeroSection = () => {
 };
 
 const TrustIndicators = () => (
-  <section className="py-24 bg-white border-b border-gray-200">
+  <section className="py-24 bg-black border-b border-gray-200">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">
+          <span className="font-bold text-2xl tracking-tighter text-white">
             ISO 9001 CERTIFIED
           </span>
         </div>
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">
+          <span className="font-bold text-2xl tracking-tighter text-white">
             MSME CERTIFIED
           </span>
         </div>
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">
-            CE CERTIFIED
+          <span className="font-bold text-2xl tracking-tighter text-white">
+            7+ Years
           </span>
         </div>
         <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-slate-800">
+          <span className="font-bold text-2xl tracking-tighter text-white">
             MADE IN INDIA
           </span>
         </div>
@@ -240,6 +240,57 @@ const WorkflowSection = () => (
     </div>
   </Section>
 );
+const ClientLogosSection = () => (
+  <section className="py-6 bg-white">
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <p className="text-brand-red font-bold uppercase tracking-widest text-lg mb-4">
+          Trusted By Industry Leaders
+        </p>
+
+        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          OUR CLIENTS
+        </h2>
+
+        {/* <p className="text-slate-600 max-w-3xl mx-auto">
+          Trusted by leading crane manufacturers, steel plants,
+          automation companies, logistics operators and industrial
+          engineering organizations.
+        </p> */}
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {Array.from({ length: 12 }).map((_, index) => (
+          <div
+            key={index}
+            className="
+              h-36
+              bg-red-50
+              border
+              border-red-100
+              rounded-sm
+              flex
+              items-center
+              justify-center
+              hover:shadow-lg
+              transition-all
+            "
+          >
+            <div className="text-center">
+              <div className="text-brand-red text-2xl font-bold">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <div className="text-slate-700 text-sm font-semibold uppercase">
+                Client
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -275,19 +326,16 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              tag: "01",
               name: "Heavy Duty Cranes",
-              img: "https://images.unsplash.com/photo-1541888941255-081d746fc605?auto=format&fit=crop&q=80&w=800",
+              img: "/dist/images/Crane.avif",
             },
             {
-              tag: "02",
-              name: "Steel Manufacturing",
-              img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800",
+              name: "Motor Manufacturing",
+              img: "/dist/images/Motor.jpg",
             },
             {
-              tag: "03",
-              name: "Port Logistics",
-              img: "https://images.unsplash.com/photo-1571171637578-41bc2dd4d7f0?auto=format&fit=crop&q=80&w=800",
+              name: "Windmills",
+              img: "/dist/images/Windmills.jpg",
             },
           ].map((item) => (
             <motion.div
@@ -312,7 +360,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <TechnicalSpecsReveal />
+      <ClientLogosSection />
 
       <Section title="Engineering Confidence" subtitle="Core Values">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -349,8 +397,8 @@ export default function Home() {
           </div>
           <div className="relative rounded-2xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
             <img
-              src="https://images.unsplash.com/photo-1531266752426-aad472b7bbf4?auto=format&fit=crop&q=80&w=1200"
-              className="w-full h-full object-cover"
+              src="/dist/images/Motor1.jpg"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -360,127 +408,25 @@ export default function Home() {
       <WorkflowSection />
 
       <Section
-        title="Products Preview"
-        subtitle="Innovations"
-        className="bg-slate-950 text-white"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {[1, 2, 3, 4].map((id) => (
-            <div
-              key={id}
-              className="bg-slate-900 p-8 border border-white/5 hover:border-brand-red transition-colors group"
-            >
-              <div className="aspect-square bg-slate-800 mb-8 flex items-center justify-center overflow-hidden">
-                <img
-                  src={`https://images.unsplash.com/photo-159742324403d-d1ef50e7a28e?auto=format&fit=crop&q=80&w=500&seed=${id}`}
-                  className="w-2/3 group-hover:scale-110 transition-transform"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <h4 className="text-lg font-bold mb-2">
-                DC EM Brake Series {id}000
-              </h4>
-              <p className="text-slate-500 text-sm mb-6">
-                Optimized for high-cycle industrial applications with magnetic
-                release.
-              </p>
-              <Link
-                to="/products"
-                className="text-brand-red text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
-              >
-                View Specs <ArrowRight size={14} />
-              </Link>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section title="Expert Solutions" subtitle="Service Focus">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-12 border border-gray-100 rounded-sm hover:shadow-xl transition-all">
-            <Settings className="text-brand-red mb-6" size={40} />
-            <h4 className="text-2xl font-bold mb-4 text-slate-900">
-              Custom Engineering
-            </h4>
-            <p className="text-slate-500 mb-8">
-              Tailored braking solutions for non-standard motor configurations
-              and specialized environments.
-            </p>
-            <div className="space-y-3">
-              {["On-site Consultation", "FEA Analysis", "Prototyping"].map(
-                (t) => (
-                  <div
-                    key={t}
-                    className="flex items-center gap-2 text-sm text-slate-700"
-                  >
-                    <CheckCircle2 size={16} className="text-brand-red" /> {t}
-                  </div>
-                ),
-              )}
-            </div>
-          </div>
-          <div className="p-12 border border-gray-100 rounded-sm hover:shadow-xl transition-all">
-            <Truck className="text-brand-red mb-6" size={40} />
-            <h4 className="text-2xl font-bold mb-4 text-slate-900">
-              Global Logistics
-            </h4>
-            <p className="text-slate-500 mb-8">
-              Priority manufacturing and expedited shipping for critical
-              maintenance and breakdown repairs.
-            </p>
-            <div className="space-y-3">
-              {[
-                "Export Packaging",
-                "Customs Clearance",
-                "Express Delivery",
-              ].map((t) => (
-                <div
-                  key={t}
-                  className="flex items-center gap-2 text-sm text-slate-700"
-                >
-                  <CheckCircle2 size={16} className="text-brand-red" /> {t}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section
         title="Client Voices"
         subtitle="Testimonials"
         className="bg-brand-black text-white relative z-10"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {[
-            {
-              name: "John Miller",
-              role: "Ops Manager, SteelCorp",
-              quote:
-                "The reliability of Unique Brakes has reduced our hoist downtime by 40%. Exceptionally engineered product.",
-            },
-            {
-              name: "Sarah Chen",
-              role: "Senior Engineer, Port Hub",
-              quote:
-                "Finally a manufacturer that understands the nuances of port crane requirements. Their DC series is unbeatable.",
-            },
-            {
-              name: "Ahmed Khan",
-              role: "Maintenance Lead, InLogistics",
-              quote:
-                "Switching to Unique was the best decision for our warehouse automation overhaul. Seamless integration.",
-            },
-          ].map((t, i) => (
+            "/dist/images/Motor1.jpg",
+            "/dist/images/Motor1.jpg",
+            "/dist/images/Motor1.jpg",
+          ].map((img, i) => (
             <div
               key={i}
-              className="bg-slate-900 border border-white/5 p-10 rounded-sm"
+              className="overflow-hidden rounded-lg border border-white/10"
             >
-              <p className="text-lg italic mb-8">"{t.quote}"</p>
-              <div>
-                <h5 className="font-bold text-white">{t.name}</h5>
-                <p className="text-brand-red/70 text-sm">{t.role}</p>
-              </div>
+              <img
+                src={img}
+                alt={`Client Review ${i + 1}`}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
             </div>
           ))}
         </div>

@@ -10,14 +10,14 @@
   // PLACEHOLDERS: Change the filenames below to match what is inside public/images/
   // =========================================================================
   const products = [
-    { id: 1, name: "U-DX-1000-PRO", cat: "Electromagnetic", torque: "200 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 2, name: "U-DX-2000-PRO", cat: "Disc Brakes", torque: "400 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 3, name: "U-DX-3000-PRO", cat: "Electromagnetic", torque: "600 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 4, name: "U-DX-4000-PRO", cat: "Hydraulic", torque: "800 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 5, name: "U-DX-5000-PRO", cat: "Electromagnetic", torque: "1000 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 6, name: "U-DX-6000-PRO", cat: "Disc Brakes", torque: "1200 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 7, name: "U-DX-7000-PRO", cat: "Electromagnetic", torque: "1400 Nm", voltage: "440V DC", image: "/images/pro1.png" },
-    { id: 8, name: "U-DX-8000-PRO", cat: "Custom Brakes", torque: "1600 Nm", voltage: "440V DC", image: "/images/pro1.png" },
+    { id: 1, name: "U-DX-1000-PRO", cat: "Electromagnetic", torque: "200 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 2, name: "U-DX-2000-PRO", cat: "Disc Brakes", torque: "400 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 3, name: "U-DX-3000-PRO", cat: "Electromagnetic", torque: "600 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 4, name: "U-DX-4000-PRO", cat: "Hydraulic", torque: "800 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 5, name: "U-DX-5000-PRO", cat: "Electromagnetic", torque: "1000 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 6, name: "U-DX-6000-PRO", cat: "Disc Brakes", torque: "1200 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 7, name: "U-DX-7000-PRO", cat: "Electromagnetic", torque: "1400 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
+    { id: 8, name: "U-DX-8000-PRO", cat: "Custom Brakes", torque: "1600 Nm", voltage: "440V DC", image: "/dist/images/pro1.png" },
   ];
 
   export default function Products() {
