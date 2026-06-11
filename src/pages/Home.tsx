@@ -337,6 +337,18 @@ export default function Home() {
               name: "Windmills",
               img: "/dist/images/Windmills.jpg",
             },
+            {
+              name: "Heavy Duty Cranes",
+              img: "/dist/images/Crane.avif",
+            },
+            {
+              name: "Motor Manufacturing",
+              img: "/dist/images/Motor.jpg",
+            },
+            {
+              name: "Windmills",
+              img: "/dist/images/Windmills.jpg",
+            },
           ].map((item) => (
             <motion.div
               whileHover={{ y: -10 }}
@@ -408,34 +420,8 @@ export default function Home() {
       <WorkflowSection />
 
       <Section
-        title="Client Voices"
-        subtitle="Testimonials"
-        className="bg-brand-black text-white relative z-10"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {[
-            "/dist/images/Motor1.jpg",
-            "/dist/images/Motor1.jpg",
-            "/dist/images/Motor1.jpg",
-          ].map((img, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-lg border border-white/10"
-            >
-              <img
-                src={img}
-                alt={`Client Review ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section
         title="Ready to Optimize?"
         subtitle="Connect With Us"
-        className="mb-[20vh]"
       >
         <div className="bg-slate-900 p-12 md:p-24 rounded-3xl text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -475,7 +461,6 @@ export default function Home() {
       </Section>
 
       {/* Final section to show drop completion */}
-      <section className="h-40 bg-white" />
     </div>
   );
 }
