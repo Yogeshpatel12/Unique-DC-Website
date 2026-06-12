@@ -14,6 +14,9 @@ import {
   ArrowRight,
   Play,
   Download,
+  BadgeCheck,
+  TrendingUp,
+  Flag,
 } from "lucide-react";
 import { downloadPDF } from "../lib/download";
 
@@ -26,9 +29,9 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 opacity-40">
+      <div className="absolute inset-0 opacity-100">
         <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
+          src="/images/HeroImage1.jpg"
           alt="Industrial Engineering"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -95,30 +98,53 @@ const HeroSection = () => {
   );
 };
 
+const trustItems = [
+  {
+    title: "ISO 9001, MSME Certified",
+    subtitle: "Certified",
+    icon: Award,
+  },
+  {
+    title: "20000+ Units Delivered",
+    subtitle: "Registered",
+    icon: BadgeCheck,
+  },
+  {
+    title: "More than 7+ Years in Business",
+    subtitle: "Experience",
+    icon: TrendingUp,
+  },
+  {
+    title: "500+ Clients Worldwide",
+    subtitle: "Proudly Built",
+    icon: Flag,
+  },
+];
+
 const TrustIndicators = () => (
-  <section className="py-24 bg-black border-b border-gray-200">
+  <section className="py-8 bg-black border-b border-white/10">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
-        <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-white">
-            ISO 9001 CERTIFIED
-          </span>
-        </div>
-        <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-white">
-            MSME CERTIFIED
-          </span>
-        </div>
-        <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-white">
-            7+ Years
-          </span>
-        </div>
-        <div className="flex items-center justify-center grayscale hover:grayscale-0 transition-all">
-          <span className="font-bold text-2xl tracking-tighter text-white">
-            MADE IN INDIA
-          </span>
-        </div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        {trustItems.map((item, index) => {
+          const Icon = item.icon;
+
+          return (
+            <div
+              key={index}
+              className="group h-52 bg-white/5 border border-white/10 rounded-1xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/10 hover:border-brand-red/30 transition-all duration-300 hover:-translate-y-1">
+
+              <Icon className="w-10 h-10 text-brand-red mb-4 group-hover:scale-110 transition-transform" />
+
+              <h3 className="text-white font-bold text-lg md:text-xl">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm md:text-base mt-1">
+                {item.subtitle}
+              </p>
+            </div>
+          );
+        })}
       </div>
     </div>
   </section>
@@ -240,6 +266,21 @@ const WorkflowSection = () => (
     </div>
   </Section>
 );
+const clientLogos = [
+  "/images/Vedanta_Logo.png",
+  "/images/Jsw_Logo.png",
+  "/images/K2_Crane_Logo.png",
+  "/images/L&T_Logo.jpg",
+  "/images/Premium_Logo.jpg",
+  "/images/Reva_Logo.png",
+  "/images/Rotomag_Logo.jpg",
+  "/images/Shapoorji_Logo.png",
+  "/images/Welspun_Logo.png",
+  "/images/Crompton_Logo.png",
+  "/images/Electromech_Logo.png",
+  "/images/BharatBijli_Logo.jpg",
+];
+
 const ClientLogosSection = () => (
   <section className="py-6 bg-white">
     <div className="max-w-7xl mx-auto px-4">
@@ -260,34 +301,39 @@ const ClientLogosSection = () => (
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {Array.from({ length: 12 }).map((_, index) => (
-          <div
-            key={index}
-            className="
-              h-36
-              bg-red-50
-              border
-              border-red-100
-              rounded-sm
-              flex
-              items-center
-              justify-center
-              hover:shadow-lg
-              transition-all
-            "
-          >
-            <div className="text-center">
-              <div className="text-brand-red text-2xl font-bold">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-
-              <div className="text-slate-700 text-sm font-semibold uppercase">
-                Client
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+  {clientLogos.map((logo, index) => (
+    <div
+      key={index}
+      className="
+        h-36
+        bg-white
+        border
+        border-slate-200
+        rounded-sm
+        flex
+        items-center
+        justify-center
+        p-4
+        hover:shadow-lg
+        transition-all
+      "
+    >
+      <img
+        src={logo}
+        alt={`Client ${index + 1}`}
+        className="
+          max-h-20
+          max-w-full
+          object-contain
+          opacity-70
+          hover:opacity-100
+          transition-all
+          duration-300
+        "
+      />
+    </div>
+  ))}
+</div>
     </div>
   </section>
 );
@@ -327,27 +373,27 @@ export default function Home() {
           {[
             {
               name: "Heavy Duty Cranes",
-              img: "/dist/images/Crane.avif",
+              img: "/images/Crane.avif",
             },
             {
               name: "Motor Manufacturing",
-              img: "/dist/images/Motor.jpg",
+              img: "/images/Motor.jpg",
             },
             {
-              name: "Windmills",
-              img: "/dist/images/Windmills.jpg",
+              name: "Wind Turbines",
+              img: "/images/Windmills.jpg",
             },
             {
-              name: "Heavy Duty Cranes",
-              img: "/dist/images/Crane.avif",
+              name: "Elevators & Lifts",
+              img: "/images/Elevators.jpg",
             },
             {
-              name: "Motor Manufacturing",
-              img: "/dist/images/Motor.jpg",
+              name: "Construction & Mining",
+              img: "/images/Mining1.png",
             },
             {
-              name: "Windmills",
-              img: "/dist/images/Windmills.jpg",
+              name: "Textile & Printing",
+              img: "/images/Textile.jpg",
             },
           ].map((item) => (
             <motion.div
@@ -394,8 +440,8 @@ export default function Home() {
                 desc: "High-grade friction linings and corrosion-resistant components.",
               },
             ].map((item, i) => (
-              <div key={i} className="flex gap-6">
-                <div className="w-14 h-14 bg-slate-100 flex items-center justify-center rounded-lg shrink-0 text-brand-red">
+              <div key={i} className="flex gap-5">
+                <div className="w-34 h-30 bg-blue-200 flex items-center justify-center rounded-sm shrink-0 text-brand-red">
                   <item.icon size={28} />
                 </div>
                 <div>
@@ -407,10 +453,10 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="relative rounded-2xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+          <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
             <img
-              src="/dist/images/Motor1.jpg"
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              src="/images/pro1.png"
+              className="w-full h-full object-cover transition-transform duration-500  hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -426,14 +472,14 @@ export default function Home() {
         <div className="bg-slate-900 p-12 md:p-24 rounded-3xl text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <img
-              src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&q=80&w=2000"
+              src="/images/Motor1.jpg"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="relative z-10 max-w-2xl mx-auto">
             <h4 className="text-4xl font-bold text-white mb-8">
-              Get a tailored quote for your project within 24 hours.
+              Book your Order within 24 hours.
             </h4>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
