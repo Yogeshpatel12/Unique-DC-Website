@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 // Removed Trophy, Users, Globe2, History as they are no longer used
-import aboutImg from "../assets/About.png"; // Adjust path based on your folder structure
+import aboutImg from "../assets/Motor.png"; // Adjust path based on your folder structure
 
 export default function About() {
   return (
@@ -10,7 +10,7 @@ export default function About() {
       <section
         className="relative py-32 md:py-48 bg-slate-950 text-white overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.4)), url(${aboutImg})`,
+          backgroundImage: `linear-gradient(to right,  rgba(2, 6, 23, 0.4)), url(${aboutImg})`,
           backgroundSize: "cover",
           backgroundPosition: "right center",
         }}
@@ -50,7 +50,7 @@ export default function About() {
             <div className="relative group">
               <div className="absolute -inset-4 bg-slate-50 rounded-2xl scale-95 group-hover:scale-100 transition-transform duration-500" />
               <img
-                src="/images/Motor.png"
+                src="/images/About2.png"
                 className="relative rounded-lg shadow-2xl z-10"
                 alt="Our Workshop"
                 referrerPolicy="no-referrer"

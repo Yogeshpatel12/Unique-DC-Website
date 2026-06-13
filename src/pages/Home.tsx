@@ -40,7 +40,7 @@ const HeroSection = () => {
       {/* Metallic Gradient Effect */}
       <div className="absolute inset-0 bg-gradient-to-tr from-black via-slate-900/80 to-transparent" />
 
-      <div className="relative z-10 text-center max-w-5xl px-4">
+      <div className="relative z-10 text-center max-w-9xl px-4">
         <div className="hero-text">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,15 +50,15 @@ const HeroSection = () => {
  
           </motion.div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter mb-8 leading-[0.8] drop-shadow-2xl">
-            ELECTROMAGNETIC BRAKING<br />
+          <h1 className="text-4xl sm:text-6xl md:text-6xl font-bold text-white tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
+            ELECTROMAGNETIC MOTOR<br />
             <span className="text-metallic-red inline-block mt-2">
-              SOLUTIONS
+              BRAKES & CLUTCHES
             </span>
           </h1>
 
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-22 font-light tracking-tight">
-            We design and manufacture Motion control systems for <br />
+            We design and Manufacture Motion control systems for <br />
             heavy-duty industrial applications.
           </p>
 
