@@ -173,7 +173,7 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#05070a] text-slate-400 pt-16 pb-8 relative overflow-hidden border-t border-white/5 font-sans">
+    <footer className="bg-[#05070a] text-slate-400 pt-10 pb-8 relative overflow-hidden border-t border-white/5 font-sans">
       {/* Enhanced Technical Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.15] pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
@@ -190,7 +190,7 @@ export const Footer = () => {
                 <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-brand-red shadow-[0_0_10px_rgba(255,49,49,0.5)] animate-pulse" />
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-bold text-white mb-1 tracking-tight">Direct Technical Support</h3>
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1 tracking-tight">Technical Support</h3>
                 <p className="text-xs md:text-sm text-slate-400">Instant expert consultation for industrial solutions</p>
               </div>
             </div>

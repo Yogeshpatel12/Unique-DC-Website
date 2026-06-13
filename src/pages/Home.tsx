@@ -31,7 +31,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 opacity-100">
         <img
-          src="/images/HeroImage1.jpg"
+          src="/images/Motor.png"
           alt="Industrial Engineering"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -47,23 +47,19 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center gap-4 mb-8"
           >
-            <div className="h-[1px] w-12 bg-brand-red" />
-            <span className="text-brand-red font-bold uppercase tracking-[0.4em] text-[10px]">
-              Premium Industrial Brakes
-            </span>
-            <div className="h-[1px] w-12 bg-brand-red" />
+ 
           </motion.div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-9xl font-bold text-white tracking-tighter mb-8 leading-[0.8] drop-shadow-2xl">
-            PRECISION <br />
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white tracking-tighter mb-8 leading-[0.8] drop-shadow-2xl">
+            ELECTROMAGNETIC BRAKING<br />
             <span className="text-metallic-red inline-block mt-2">
-              ENGINEERING
+              SOLUTIONS
             </span>
           </h1>
 
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light tracking-tight">
-            High-performance DC motor brakes for <br />
-            heavy-duty industrial cranes and automation.
+          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-22 font-light tracking-tight">
+            We design and manufacture Motion control systems for <br />
+            heavy-duty industrial applications.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -122,7 +118,7 @@ const trustItems = [
 ];
 
 const TrustIndicators = () => (
-  <section className="py-8 bg-black border-b border-white/10">
+  <section className="py-10 bg-black border-b border-white/10">
     <div className="max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {trustItems.map((item, index) => {
@@ -159,10 +155,10 @@ const Section = ({
 }: any) => (
   <section
     id={id}
-    className={`min-h-screen flex flex-col justify-center py-20 ${className}`}
+    className={`min-h-screen flex flex-col justify-center py-10 ${className}`}
   >
     <div className="max-w-7xl mx-auto px-4 w-full">
-      <div className="mb-20">
+      <div className="mb-14">
         <motion.h3
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -185,52 +181,11 @@ const Section = ({
   </section>
 );
 
-const TechnicalSpecsReveal = () => (
-  <Section
-    title="Precision Engineering"
-    subtitle="Beyond Standards"
-    className="bg-white"
-  >
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-      {[
-        {
-          label: "Magnetic Flux",
-          value: "2.4 Tesla",
-          desc: "Optimized core geometry for maximum clamping force.",
-        },
-        {
-          label: "Braking Torque",
-          value: "3500 Nm",
-          desc: "High-density friction material for instantaneous stop.",
-        },
-        {
-          label: "Thermal Capacity",
-          value: "850°C",
-          desc: "Engineered to withstand extreme heat in steel mills.",
-        },
-      ].map((spec, i) => (
-        <div key={i} className="p-10 border border-slate-100 rounded-sm">
-          <div className="text-brand-red font-mono text-xs mb-4 uppercase">
-            Spec 0{i + 1}
-          </div>
-          <div className="text-4xl font-bold text-slate-900 mb-2">
-            {spec.value}
-          </div>
-          <div className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">
-            {spec.label}
-          </div>
-          <p className="text-slate-500 text-sm leading-relaxed">{spec.desc}</p>
-        </div>
-      ))}
-    </div>
-  </Section>
-);
 
 const WorkflowSection = () => (
   <Section
     title="Manufacturing Excellence"
-    subtitle="Our Process"
-    className="bg-slate-50"
+    className="bg-gray-900 [&_h2]:text-gray-400 uppercase"
   >
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       {[
@@ -359,15 +314,17 @@ export default function Home() {
   return (
     <div ref={containerRef} className="relative pt-20 overflow-hidden">
       <div ref={heroRef} className="relative z-10">
+
         <HeroSection />
+        
       </div>
 
-      <TrustIndicators />
+      
 
       <Section
         title="Industries We Empower"
         subtitle="Global Reach"
-        className="bg-slate-50"
+        className="bg-slate-50 uppercase"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -418,44 +375,20 @@ export default function Home() {
         </div>
       </Section>
 
-      <ClientLogosSection />
+      
 
-      <Section title="Engineering Confidence" subtitle="Core Values">
+      <Section title="Engineering Confidence" subtitle="Manufacturing Excellence in Action" className="bg-slate-50 uppercase">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-12">
-            {[
-              {
-                icon: Shield,
-                title: "Uncompromising Safety",
-                desc: "Fail-safe mechanisms that meet international safety standards.",
-              },
-              {
-                icon: Zap,
-                title: "Rapid Response",
-                desc: "Minimal engagement time for precision positioning control.",
-              },
-              {
-                icon: Award,
-                title: "Premium Materials",
-                desc: "High-grade friction linings and corrosion-resistant components.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-5">
-                <div className="w-34 h-30 bg-blue-200 flex items-center justify-center rounded-sm shrink-0 text-brand-red">
-                  <item.icon size={28} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-slate-500 leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+          <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+            <img
+              src="/images/Main_Brake.png"
+              className="w-full h-full object-cover transition-transform duration-500  hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
             <img
-              src="/images/pro1.png"
+              src="/images/Motor.png"
               className="w-full h-full object-cover transition-transform duration-500  hover:scale-105"
               referrerPolicy="no-referrer"
             />
@@ -464,15 +397,18 @@ export default function Home() {
       </Section>
 
       <WorkflowSection />
+      <TrustIndicators />
+      <ClientLogosSection />
 
       <Section
         title="Ready to Optimize?"
         subtitle="Connect With Us"
+        className="uppercase"
       >
         <div className="bg-slate-900 p-12 md:p-24 rounded-3xl text-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 opacity-80">
             <img
-              src="/images/Motor1.jpg"
+              src="/images/Mining1.png"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />

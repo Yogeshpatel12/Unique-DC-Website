@@ -1,15 +1,8 @@
 import React from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-  ArrowRight,
-  Download,
-  FileText,
-  ChevronRight,
-} from "lucide-react";
+import { ArrowRight, Download, FileText, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { downloadPDF } from "../lib/download";
-
-
 
 // =========================================================================
 // PLACEHOLDERS: Change the filenames below to match what is inside public/images/
@@ -25,7 +18,7 @@ const products = [
   },
   {
     id: 2,
-    name: "Fail-Safe Brake",
+    name: "FAIL-SAFE BRAKE",
     cat: "Disc Brakes",
     torque: "400 Nm",
     voltage: "440V DC",
@@ -33,7 +26,7 @@ const products = [
   },
   {
     id: 3,
-    name: "DC Motors",
+    name: "DC MOTORS",
     cat: "Electromagnetic",
     torque: "600 Nm",
     voltage: "440V DC",
@@ -41,7 +34,7 @@ const products = [
   },
   {
     id: 4,
-    name: "Electromagnetic Brake",
+    name: "ELECTROMAGNETIC BRAKES",
     cat: "Hydraulic",
     torque: "800 Nm",
     voltage: "440V DC",
@@ -49,7 +42,7 @@ const products = [
   },
   {
     id: 5,
-    name: "Clutch Brake Combination",
+    name: "CLUTCH BRAKE COMBINATION",
     cat: "Electromagnetic",
     torque: "1000 Nm",
     voltage: "440V DC",
@@ -57,7 +50,7 @@ const products = [
   },
   {
     id: 6,
-    name: "Aluminium Liners",
+    name: "ALUMINUM LINERS",
     cat: "Disc Brakes",
     torque: "1200 Nm",
     voltage: "440V DC",
@@ -65,7 +58,7 @@ const products = [
   },
   {
     id: 7,
-    name: "Rectifiers",
+    name: "RECTIFIERS",
     cat: "Electromagnetic",
     torque: "1400 Nm",
     voltage: "440V DC",
@@ -73,7 +66,7 @@ const products = [
   },
   {
     id: 8,
-    name: "Hub Bores",
+    name: "HUB MOUNT BRAKE",
     cat: "Custom Brakes",
     torque: "1600 Nm",
     voltage: "440V DC",
@@ -81,7 +74,7 @@ const products = [
   },
   {
     id: 9,
-    name: "Clutch Brake",
+    name: "CLUTCH BRAKE",
     cat: "Electromagnetic",
     torque: "1000 Nm",
     voltage: "440V DC",
@@ -89,7 +82,7 @@ const products = [
   },
   {
     id: 10,
-    name: "Liners",
+    name: "LINERS",
     cat: "Disc Brakes",
     torque: "1200 Nm",
     voltage: "440V DC",
@@ -97,7 +90,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Friction Plates",
+    name: "FRICTION PLATES",
     cat: "Electromagnetic",
     torque: "1400 Nm",
     voltage: "440V DC",
@@ -105,7 +98,7 @@ const products = [
   },
   {
     id: 12,
-    name: "Accessories",
+    name: "ACCESSORIES",
     cat: "Custom Brakes",
     torque: "1600 Nm",
     voltage: "440V DC",
@@ -222,8 +215,6 @@ export default function Products() {
               ))}
             </AnimatePresence>
           </motion.div>
-
-          
         </div>
       </main>
 
