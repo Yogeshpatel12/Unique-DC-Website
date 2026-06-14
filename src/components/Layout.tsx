@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/LogoUnique.png';
+import logo from '../assets/UniqueLogo3.png';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -11,6 +11,14 @@ const navLinks = [
   { name: 'Gallery', path: '/gallery' },
   { name: 'Contact', path: '/contact' },
 ];
+
+// Exact colors mapped from the logo image
+const theme = {
+  blue: '#2c5e7a',
+  logoYellow: '#ffb400', // The precise amber yellow from "UNIQUE DC"
+  black: '#000000',
+  darkBg: '#0a0d14',
+};
 
 const Logo = ({ className = 'h-8 md:h-9 w-auto block object-contain' }: { className?: string }) => (
   <img src={logo} alt="UNIQUE DC MOTOR BRAKES" className={className} />
@@ -38,7 +46,6 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[60] bg-white border-b border-gray-100 shadow-sm">
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex items-center h-full sm:pr-8">
@@ -54,18 +61,25 @@ export const Navbar = () => {
             animate="visible"
             className="hidden md:flex items-center space-x-8"
           >
-            {navLinks.map((link) => (
-              <motion.div key={link.name} variants={itemVariants}>
-                <Link
-                  to={link.path}
-                  className={`text-xs font-bold uppercase tracking-widest transition-colors ${
-                    location.pathname === link.path ? 'text-brand-red' : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <motion.div key={link.name} variants={itemVariants}>
+                  <Link
+                    to={link.path}
+                    style={{ 
+                      color: isActive ? theme.blue : undefined,
+                      '--hover-color': theme.logoYellow 
+                    } as React.CSSProperties}
+                    className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+                      isActive ? '' : 'text-slate-600 hover:text-[var(--hover-color)]'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              );
+            })}
             
             <motion.div variants={itemVariants}>
               <a 
@@ -97,7 +111,8 @@ export const Navbar = () => {
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-slate-900 p-2 relative z-[70]"
+              style={{ '--hover-color': theme.logoYellow } as React.CSSProperties}
+              className="text-slate-600 hover:text-[var(--hover-color)] p-2 relative z-[70]"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -128,23 +143,35 @@ export const Navbar = () => {
                 <Logo className="h-7 w-auto" />
               </div>
               <div className="flex flex-col space-y-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-between py-4 border-b border-gray-100 group"
-                  >
-                    <span className={`text-sm font-bold uppercase tracking-[0.2em] transition-colors ${
-                      location.pathname === link.path ? 'text-brand-red' : 'text-slate-600 group-hover:text-slate-900'
-                    }`}>
-                      {link.name}
-                    </span>
-                    <div className={`w-1.5 h-1.5 rounded-full bg-brand-red transition-transform ${
-                      location.pathname === link.path ? 'scale-100' : 'scale-0'
-                    }`} />
-                  </Link>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.name}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      style={{ 
+                        color: isActive ? theme.blue : undefined,
+                        '--hover-color': theme.logoYellow 
+                      } as React.CSSProperties}
+                      className="flex items-center justify-between py-4 border-b border-gray-100 group"
+                    >
+                      <span 
+                        className={`text-sm font-bold uppercase tracking-[0.2em] transition-colors ${
+                          isActive ? '' : 'text-slate-600 group-hover:text-[var(--hover-color)]'
+                        }`}
+                      >
+                        {link.name}
+                      </span>
+                      <div 
+                        style={{ backgroundColor: theme.logoYellow }}
+                        className={`w-1.5 h-1.5 rounded-full transition-transform ${
+                          isActive ? 'scale-100' : 'scale-0'
+                        }`} 
+                      />
+                    </Link>
+                  );
+                })}
               </div>
 
               <div className="mt-auto pt-12">
@@ -173,21 +200,42 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#05070a] text-slate-400 pt-10 pb-8 relative overflow-hidden border-t border-white/5 font-sans">
+    <footer 
+      style={{ backgroundColor: theme.black }}
+      className="text-slate-400 pt-10 pb-8 relative overflow-hidden border-t border-white/5 font-sans"
+    >
       {/* Enhanced Technical Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.15] pointer-events-none" />
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-red/30 to-transparent" />
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
+      <div 
+        style={{ backgroundImage: `linear-gradient(to right, transparent, ${theme.blue}4d, transparent)` }}
+        className="absolute top-0 left-0 w-full h-[1px]" 
+      />
+      <div 
+        style={{ backgroundColor: `${theme.blue}0d` }}
+        className="absolute -top-24 -left-24 w-96 h-96 rounded-full blur-[120px] pointer-events-none" 
+      />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* WhatsApp Support Section - Streamlined */}
         <div className="mb-8 md:mb-12 pb-8 md:pb-12 border-b border-white/5">
           <div className="bg-white/[0.01] border border-white/5 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 hover:border-white/10 transition-all group overflow-hidden relative">
-            <div className="absolute inset-0 bg-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl pointer-events-none" />
+            <div 
+              style={{ backgroundColor: `${theme.blue}0d` }}
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl pointer-events-none" 
+            />
             
             <div className="relative z-10 flex flex-col sm:flex-row items-center text-center sm:text-left gap-4 sm:gap-6">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-brand-red/5 border border-brand-red/10 flex items-center justify-center shrink-0">
-                <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-brand-red shadow-[0_0_10px_rgba(255,49,49,0.5)] animate-pulse" />
+              <div 
+                style={{ backgroundColor: `${theme.blue}0d`, borderColor: `${theme.blue}1a` }}
+                className="w-12 h-12 md:w-14 md:h-14 rounded-full border flex items-center justify-center shrink-0"
+              >
+                <div 
+                  style={{ 
+                    backgroundColor: theme.logoYellow,
+                    boxShadow: `0 0 10px ${theme.logoYellow}80`
+                  }}
+                  className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full animate-pulse" 
+                />
               </div>
               <div>
                 <h3 className="text-lg md:text-xl font-bold text-white mb-1 tracking-tight">Technical Support</h3>
@@ -213,13 +261,17 @@ export const Footer = () => {
           {/* Navigation blocks */}
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-2 mb-6 lg:mb-8">
-              <div className="w-1 h-3 bg-brand-red" />
+              <div style={{ backgroundColor: theme.logoYellow }} className="w-1 h-3" />
               <h4 className="text-white font-bold text-sm uppercase tracking-widest">Solutions</h4>
             </div>
             <ul className="space-y-3 lg:space-y-4">
               {["DC Disc Brakes", "Thruster Brakes", "Marine Systems", "Custom Safety", "Maintenance"].map((item) => (
                 <li key={item}>
-                  <Link to="/products" className="text-sm hover:text-brand-red hover:translate-x-1 transition-all duration-300 inline-block font-medium">
+                  <Link 
+                    to="/products" 
+                    style={{ '--hover-color': theme.logoYellow } as React.CSSProperties}
+                    className="text-sm hover:text-[var(--hover-color)] hover:translate-x-1 transition-all duration-300 inline-block font-medium"
+                  >
                     {item}
                   </Link>
                 </li>
@@ -229,7 +281,7 @@ export const Footer = () => {
 
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-2 mb-6 lg:mb-8">
-              <div className="w-1 h-3 bg-brand-red" />
+              <div style={{ backgroundColor: theme.logoYellow }} className="w-1 h-3" />
               <h4 className="text-white font-bold text-sm uppercase tracking-widest">Company</h4>
             </div>
             <ul className="space-y-3 lg:space-y-4">
@@ -240,7 +292,11 @@ export const Footer = () => {
                 { name: "Privacy Policy", path: "/privacy" }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link to={item.path} className="text-sm hover:text-brand-red hover:translate-x-1 transition-all duration-300 inline-block font-medium">
+                  <Link 
+                    to={item.path} 
+                    style={{ '--hover-color': theme.logoYellow } as React.CSSProperties}
+                    className="text-sm hover:text-[var(--hover-color)] hover:translate-x-1 transition-all duration-300 inline-block font-medium"
+                  >
                     {item.name}
                   </Link>
                 </li>
@@ -251,7 +307,7 @@ export const Footer = () => {
           {/* Location Block with Map */}
           <div className="col-span-2 lg:col-span-8">
             <div className="flex items-center gap-2 mb-6 lg:mb-8">
-              <div className="w-1 h-3 bg-brand-red" />
+              <div style={{ backgroundColor: theme.logoYellow }} className="w-1 h-3" />
               <h4 className="text-white font-bold text-sm uppercase tracking-widest">Our Location</h4>
             </div>
             <a 
@@ -271,14 +327,20 @@ export const Footer = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="opacity-60 group-hover:opacity-100 transition-opacity duration-500"
                 ></iframe>
-                <div className="absolute inset-0 bg-brand-red/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <div 
+                  style={{ backgroundColor: `${theme.blue}0d` }}
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
                   <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-sm border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest">
                     View on Google Maps
                   </div>
                 </div>
               </div>
-              <p className="mt-4 text-[11px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2 group-hover:text-brand-red transition-colors leading-relaxed">
-                <MapPin size={14} className="text-brand-red shrink-0" />
+              <p 
+                style={{ '--hover-color': theme.logoYellow } as React.CSSProperties}
+                className="mt-4 text-[11px] font-bold uppercase tracking-widest text-slate-500 flex items-center gap-2 group-hover:text-[var(--hover-color)] transition-colors leading-relaxed"
+              >
+                <MapPin size={14} style={{ color: theme.logoYellow }} className="shrink-0" />
                 Regd. office & Mfg. Unit gudli, near power house, Udaipur, Rajasthan 313024
               </p>
             </a>
@@ -288,23 +350,33 @@ export const Footer = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col md:flex-row items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500 text-center md:text-left">
             <span className="flex items-center gap-2">
-              <div className="w-1 h-1 bg-brand-red" />
-              © 2026 UNIQUE DC MOTOR BRAKES
+              <div style={{ backgroundColor: theme.logoYellow }} className="w-1 h-1" />
+            © 2026 UNIQUE DC MOTOR BRAKES PVT. LTD.
             </span>
-            {/* Compliance and Terms removed */}
+            
           </div>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto">
             <div className="flex gap-3 w-full sm:w-auto justify-center">
-              <div className="flex-1 sm:flex-none px-5 py-2 bg-brand-red text-white text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-red/10 text-center whitespace-nowrap">
+              <div 
+                style={{ 
+                  backgroundColor: theme.blue,
+                  boxShadow: `0 4px 14px ${theme.blue}1a`
+                }}
+                className="flex-1 sm:flex-none px-5 py-2 text-metallic-red text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap"
+              >
                 ISO 9001:2015
               </div>
-              <div className="flex-1 sm:flex-none px-5 py-2 border border-white/5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] bg-white/[0.02] text-center whitespace-nowrap">
+              <div className="flex-1 sm:flex-none px-5 py-2 border text-metallic-red border-white/5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] bg-white/[0.02] text-center whitespace-nowrap">
                 MSME CERTIFIED
               </div>
             </div>
           </div>
+          
         </div>
+        <div className="text-center text-xs  text-metallic-red">Made with ❤️ by YOGESH PATEL</div>
+                <div className="text-center text-xs  text-metallic-red">Contact: +91-6375360041, yp766104@gmail.com</div>
+
       </div>
     </footer>
   );

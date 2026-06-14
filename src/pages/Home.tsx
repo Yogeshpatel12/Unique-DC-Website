@@ -31,14 +31,14 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 opacity-100">
         <img
-          src="/images/Motor.png"
+          src="/images/Motor.jpg"
           alt="Industrial Engineering"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
       </div>
       {/* Metallic Gradient Effect */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-black via-slate-900/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-tr  via-slate-900/80 to-transparent" />
 
       <div className="relative z-10 text-center max-w-9xl px-4">
         <div className="hero-text">
@@ -46,36 +46,38 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center gap-4 mb-8"
-          >
- 
-          </motion.div>
+          ></motion.div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-6xl font-bold text-white tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
-            ELECTROMAGNETIC MOTOR<br />
+          <h1 className="text-3xl sm:text-6xl md:text-8xl font-bold text-gray-200 tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
+            ELECTROMAGNETIC
+            <br />
             <span className="text-metallic-red inline-block mt-2">
-              BRAKES & CLUTCHES
+              MOTORS & BRAKES
             </span>
           </h1>
 
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-22 font-light tracking-tight">
-            We design and Manufacture Motion control systems for <br />
+            We Design and Manufacture automation & motion control systems for{" "}
+            <br />
             heavy-duty industrial applications.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+
             <button
               onClick={handleExplore}
-              className="group relative px-10 py-5 bg-metallic-red text-white font-bold rounded-sm overflow-hidden transition-all shadow-[0_0_40px_rgba(255,49,49,0.3)]"
+              className="group relative px-10 py-5 border border-white/10 text-white font-bold rounded-sm overflow-hidden transition-all"
             >
               <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <span className="relative z-10 flex items-center gap-3 uppercase tracking-widest text-xs">
-                Explore Products{" "}
+                Our Products{" "}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
                 />
               </span>
             </button>
+
             <button
               onClick={() =>
                 downloadPDF(
@@ -83,9 +85,9 @@ const HeroSection = () => {
                   "Complete range of Unique DC Brakes specifications.",
                 )
               }
-              className="px-10 py-5 border border-white/10 text-white/70 font-bold rounded-sm hover:bg-white/5 hover:text-white transition-all uppercase tracking-widest text-xs flex items-center gap-3"
+              className="px-10 py-5 border border-white/10 text-white font-bold rounded-sm hover:bg-white/5 hover:text-white transition-all uppercase tracking-widest text-xs flex items-center gap-3 "
             >
-              <Download size={16} /> Technical Datasheet
+              <Download size={16} /> Our Catalogue
             </button>
           </div>
         </div>
@@ -118,18 +120,18 @@ const trustItems = [
 ];
 
 const TrustIndicators = () => (
-  <section className="py-10 bg-black border-b border-white/10">
+  <section className="py-10  border-b border-white/10">
     <div className="max-w-7xl mx-auto px-4">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="bg-black grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {trustItems.map((item, index) => {
           const Icon = item.icon;
 
           return (
             <div
               key={index}
-              className="group h-52 bg-white/5 border border-white/10 rounded-1xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/10 hover:border-brand-red/30 transition-all duration-300 hover:-translate-y-1">
-
-              <Icon className="w-10 h-10 text-brand-red mb-4 group-hover:scale-110 transition-transform" />
+              className="group h-52 bg-white/5 border border-white/10 rounded-1xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/10 hover:border-yellow/30 transition-all duration-300 hover:-translate-y-1"
+            >
+              <Icon className="w-10 h-10 text-yellow-500 mb-4 group-hover:scale-110 transition-transform" />
 
               <h3 className="text-white font-bold text-lg md:text-xl">
                 {item.title}
@@ -163,7 +165,7 @@ const Section = ({
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="text-brand-red font-bold uppercase tracking-widest text-xs mb-4"
+          className="text-yellow-500 font-bold uppercase tracking-widest text-xs mb-4"
         >
           {subtitle}
         </motion.h3>
@@ -171,7 +173,7 @@ const Section = ({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900"
+          className="text-4xl  md:text-5xl font-bold tracking-tight text-slate-600"
         >
           {title}
         </motion.h2>
@@ -181,13 +183,12 @@ const Section = ({
   </section>
 );
 
-
 const WorkflowSection = () => (
   <Section
     title="Manufacturing Excellence"
-    className="bg-gray-900 [&_h2]:text-gray-400 uppercase"
+    className="bg-gray-900 [&_h2]:text-yellow-500 uppercase"
   >
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 text-slate-500 md:grid-cols-4 gap-4">
       {[
         {
           step: "01",
@@ -196,7 +197,7 @@ const WorkflowSection = () => (
         },
         {
           step: "02",
-          title: "Precision Machining",
+          title: "Precision  ",
           desc: "CNC milling with micron-level tolerances for mating surfaces.",
         },
         {
@@ -211,7 +212,7 @@ const WorkflowSection = () => (
         },
       ].map((s, i) => (
         <div key={i} className="bg-white p-8 border border-gray-100 rounded-sm">
-          <div className="w-12 h-12 bg-brand-red text-white flex items-center justify-center font-bold mb-6 rounded-full">
+          <div className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center font-bold mb-6 rounded-full">
             {s.step}
           </div>
           <h4 className="font-bold text-lg mb-3">{s.title}</h4>
@@ -240,11 +241,11 @@ const ClientLogosSection = () => (
   <section className="py-6 bg-white">
     <div className="max-w-7xl mx-auto px-4">
       <div className="text-center mb-16">
-        <p className="text-brand-red font-bold uppercase tracking-widest text-lg mb-4">
+        <p className="text-yellow-500 font-bold uppercase tracking-widest text-lg mb-4">
           Trusted By Industry Leaders
         </p>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
           OUR CLIENTS
         </h2>
 
@@ -256,10 +257,10 @@ const ClientLogosSection = () => (
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-  {clientLogos.map((logo, index) => (
-    <div
-      key={index}
-      className="
+        {clientLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="
         h-36
         bg-white
         border
@@ -272,11 +273,11 @@ const ClientLogosSection = () => (
         hover:shadow-lg
         transition-all
       "
-    >
-      <img
-        src={logo}
-        alt={`Client ${index + 1}`}
-        className="
+          >
+            <img
+              src={logo}
+              alt={`Client ${index + 1}`}
+              className="
           max-h-20
           max-w-full
           object-contain
@@ -285,10 +286,10 @@ const ClientLogosSection = () => (
           transition-all
           duration-300
         "
-      />
-    </div>
-  ))}
-</div>
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 );
@@ -314,17 +315,13 @@ export default function Home() {
   return (
     <div ref={containerRef} className="relative pt-20 overflow-hidden">
       <div ref={heroRef} className="relative z-10">
-
         <HeroSection />
-        
       </div>
-
-      
 
       <Section
         title="Industries We Empower"
         subtitle="Global Reach"
-        className="bg-slate-50 uppercase"
+        className="bg-slate-100 uppercase"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -375,9 +372,11 @@ export default function Home() {
         </div>
       </Section>
 
-      
-
-      <Section title="Engineering Confidence" subtitle="Manufacturing Excellence in Action" className="bg-slate-50 uppercase">
+      <Section
+        title="Engineering Confidence"
+        subtitle="Manufacturing Excellence in Action"
+        className="bg-slate-50 uppercase"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
             <img
@@ -425,7 +424,7 @@ export default function Home() {
                     "Complete technical specifications for all products.",
                   )
                 }
-                className="bg-white text-slate-900 px-10 py-5 rounded-sm font-bold hover:bg-slate-50 transition-all uppercase tracking-widest text-xs"
+                className="bg-white text-slate-900 px-10 py-5 rounded-sm font-bold hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs"
               >
                 Download Catalogue
               </button>
@@ -433,7 +432,7 @@ export default function Home() {
                 href={`https://wa.me/918233268311?text=${encodeURIComponent("Hi Unique DC, I am interested in your industrial braking solutions. Could you please share your latest price list and catalog?")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-red text-white px-10 py-5 rounded-sm font-bold hover:bg-brand-red/90 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2"
+                className="bg-slate-700 text-white px-10 py-5 rounded-sm font-bold hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs flex items-center justify-center gap-2"
               >
                 Request Price List
               </a>

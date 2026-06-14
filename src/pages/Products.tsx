@@ -14,7 +14,7 @@ const products = [
     cat: "Electromagnetic",
     torque: "200 Nm",
     voltage: "440V DC",
-    image: "/images/pro1.png",
+    image: "/images/Main_Brake_2.png",
   },
   {
     id: 2,
@@ -145,16 +145,16 @@ export default function Products() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center md:text-left max-w-3xl"
           >
-            <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">
+            <h2 className="text-yellow-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">
               Engineering Catalog
             </h2>
             <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
               HEAVY-DUTY <br />
               <span className="text-metallic-red">BRAKING SOLUTIONS.</span>
             </h1>
-            <p className="text-slate-400 text-lg font-light leading-relaxed mb-10">
+            <p className="text-slate-400 text-lg font-light uppercase leading-relaxed mb-10">
               Discover our range of high-precision electromagnetic, disc, and
-              hydraulic brakes designed for extreme industrial environments.
+              Electromagnetic brakes designed for extreme industrial environments.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button
@@ -174,7 +174,7 @@ export default function Products() {
       </header>
 
       {/* Main Grid */}
-      <main className="py-20">
+      <main className="py-18">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             variants={containerVariants}
@@ -207,7 +207,7 @@ export default function Products() {
                   </Link>
 
                   <div className="py-2 text-center">
-                    <h3 className="text-lg font-bold text-slate-950 group-hover:text-brand-red transition-colors">
+                    <h3 className="text-lg font-bold text-slate-950 group-hover:text-yellow-500 transition-colors">
                       {product.name}
                     </h3>
                   </div>
@@ -219,14 +219,14 @@ export default function Products() {
       </main>
 
       {/* Support Section */}
-      <section className="bg-slate-50 border-t border-gray-100 py-32">
+      <section className="bg-slate-50 border-t border-gray-100 py-2">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-brand-red font-bold uppercase tracking-[0.3em] text-[10px] mb-4">
+              <h2 className="text-yellow-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-4">
                 Request Support
               </h2>
-              <h3 className="text-3xl md:text-5xl font-bold text-slate-950 tracking-tight leading-tight mb-8">
+              <h3 className="text-2xl md:text-4xl uppercase font-bold text-slate-950 tracking-tight leading-tight mb-2">
                 Can't find the exact <br />
                 specification?
               </h3>
@@ -256,9 +256,9 @@ export default function Products() {
                       "Company documentation for industrial products.",
                     )
                   }
-                  className="flex flex-col p-8 bg-white border border-gray-100 hover:bg-red-100 hover:border-brand-red/30 hover:shadow-lg transition-all text-left"
+                  className="flex flex-col p-8 bg-white border border-gray-100 hover:bg-slate-200 hover:border-slate-300 hover:shadow-lg transition-all text-left"
                 >
-                  <doc.icon className="text-brand-red mb-6" size={24} />
+                  <doc.icon className="text-yellow-500 mb-6" size={24} />
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">
                     Download
                   </span>

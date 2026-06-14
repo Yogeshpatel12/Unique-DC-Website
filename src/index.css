@@ -12,7 +12,7 @@
 
 @layer utilities {
   .text-metallic-red {
-    background: linear-gradient(135deg, #FF3131 0%, #8E0000 50%, #FF3131 100%);
+    background: linear-gradient(135deg, #ebc324 40%, #12c9e1 80%, #edbc2a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% auto;
@@ -20,7 +20,7 @@
   }
 
   .bg-metallic-red {
-    background: linear-gradient(135deg, #FF3131 0%, #8E0000 50%, #FF3131 100%);
+    background: linear-gradient(135deg, #b1ac99 0%, #a2c8cd 80%, #9c9582 100%);
     background-size: 200% auto;
     animation: shine 3s linear infinite;
   }

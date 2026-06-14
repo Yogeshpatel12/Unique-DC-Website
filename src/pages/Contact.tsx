@@ -19,7 +19,7 @@ export default function Contact() {
       value: "+91-82332 68311",
       href: "https://wa.me/918233268311",
       color: "text-green-600",
-      bgColor: "bg-green-50 hover:bg-green-100",
+      bgColor: "bg-green-50 hover:bg-slate-400",
       borderColor: "border-green-200",
       description: "Instant messaging for quick inquiries",
     },
@@ -28,27 +28,27 @@ export default function Contact() {
       title: "Call Sales Team",
       value: "+91-79769 58311",
       href: "tel:+917976958311",
-      color: "text-brand-red",
-      bgColor: "bg-red-50 hover:bg-red-100",
+      color: "text-red-600",
+      bgColor: "bg-red-50 hover:bg-slate-400",
       borderColor: "border-red-200",
       description: "Direct line to our sales engineers",
     },
     {
       icon: Mail,
       title: "Email Support",
-      value: "unique@dcmotorbrake.com",
-      href: "mailto:unique@dcmotorbrake.com",
-      color: "text-blue-600",
-      bgColor: "bg-blue-50 hover:bg-blue-100",
+      value: "unique@dcmotorbrakes.com",
+      href: "mailto:unique.electromagneticbrake@gmail.com",
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-50 hover:bg-slate-400",
       borderColor: "border-blue-200",
       description: "Technical inquiries and quotes",
     },
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-5">
       {/* Hero Section */}
-      <section className="relative bg-slate-950 py-32 md:py-40 text-white overflow-hidden">
+      <section className="relative bg-slate-950 py-32 md:py-25 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(248,113,113,0.3),_transparent_50%)]" />
@@ -66,15 +66,15 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand-red/10 border border-brand-red/20 mb-8">
-              <span className="text-brand-red font-semibold text-sm uppercase tracking-[0.2em]">
+            <div className="inline-flex items-center px-4 py-2  border-brand-red/20 mb-8">
+              <span className="text-yellow-500 font-semibold text-sm uppercase tracking-[0.2em]">
                 Get In Touch
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
               Let's Build Something
-              <span className="block text-brand-red">Reliable Together</span>
+              <span className="block text-metallic-red text-yellow-500">Reliable Together</span>
             </h1>
 
             <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12">
@@ -88,17 +88,17 @@ export default function Contact() {
                 href="tel:+917976958311"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red text-white font-bold uppercase tracking-widest rounded-full shadow-lg shadow-brand-red/25 hover:shadow-xl hover:shadow-brand-red/30 transition-all"
+                className="inline-flex items-center text-metallic-red gap-3 px-8 py-4 text-white font-bold uppercase tracking-widest rounded-full shadow-lg shadow-brand-red/25 hover:shadow-sm hover:shadow-brand-yellow/30 transition-all"
               >
                 <Phone size={20} />
                 Call Now
               </motion.a>
 
               <motion.a
-                href="mailto:unique@dcmotorbrake.com"
+                href="mailto:unique,electromagneticbrake@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/20 text-white font-bold uppercase tracking-widest rounded-full hover:bg-white/10 hover:border-white/40 transition-all"
+                className="inline-flex items-center text-metallic-red gap-3 px-8 py-4 text-white font-bold uppercase tracking-widest rounded-full shadow-lg shadow-brand-red/25 hover:shadow-sm hover:shadow-brand-yellow/30 transition-all"
               >
                 <Mail size={20} />
                 Email Us
@@ -109,7 +109,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Methods Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-600 ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -117,10 +117,10 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-4 uppercase">
               Multiple Ways to Connect
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               Choose the communication method that works best for your schedule
               and requirements.
             </p>
@@ -151,7 +151,7 @@ export default function Contact() {
                     <method.icon size={32} />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
+                  <h3 className="text-xl font-bold uppercase text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
                     {method.title}
                   </h3>
 
@@ -173,8 +173,8 @@ export default function Contact() {
       </section>
 
       {/* Office Information */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-8 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Office Details */}
             <motion.div
@@ -184,7 +184,7 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 uppercase text-slate-900 mb-4">
                   Visit Our Headquarters
                 </h2>
                 <p className="text-slate-600 text-lg leading-relaxed">
@@ -200,7 +200,7 @@ export default function Contact() {
                     <Building2 size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">
+                    <h4 className="font-bold uppercase text-slate-900 mb-1">
                       Registered & Head Office
                     </h4>
                     <p className="text-slate-600 leading-relaxed">
@@ -218,7 +218,7 @@ export default function Contact() {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">
+                    <h4 className="font-bold uppercase text-slate-900 mb-1">
                       Business Hours
                     </h4>
                     <div className="text-slate-600 space-y-1">
@@ -250,7 +250,7 @@ export default function Contact() {
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
                   <div className="flex items-center gap-2">
-                    <MapPin size={16} className="text-brand-red" />
+                    <MapPin size={16} className="text-yellow-500" />
                     <span className="text-sm font-semibold text-slate-900">
                       Our Location
                     </span>
@@ -263,7 +263,7 @@ export default function Contact() {
       </section>
 
       {/* IndiaMART Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-700 ">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -271,10 +271,10 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-4">
               Explore Our Marketplace
             </h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               Discover our complete product catalog and verified business
               listings on India's largest B2B marketplace.
             </p>
@@ -311,7 +311,7 @@ export default function Contact() {
                   Verified Business Listing
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-                  Visit Our IndiaMART Store
+                  Visit Our <b>IndiaMART</b> Store
                 </h3>
                 <p className="text-slate-600 text-base md:text-lg leading-relaxed max-w-2xl">
                   Browse our comprehensive product catalog, view detailed
@@ -335,7 +335,7 @@ export default function Contact() {
             </div>
 
             {/* Animated Border */}
-            <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-orange-500 via-transparent to-orange-500 bg-clip-border opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-slate-600 via-transparent to-slate-600 bg-clip-border opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.a>
         </div>
       </section>
