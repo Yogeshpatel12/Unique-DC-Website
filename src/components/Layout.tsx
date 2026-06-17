@@ -374,7 +374,7 @@ export const Footer = () => {
           </div>
           
         </div>
-        <div className="text-center text-xs  text-metallic-red">Made with ❤️ by YOGESH PATEL</div>
+        <div className="text-center text-xs ">Made with ❤️ by YOGESH PATEL</div>
                 <div className="text-center text-xs  text-metallic-red">Contact: +91-6375360041, yp766104@gmail.com</div>
 
       </div>

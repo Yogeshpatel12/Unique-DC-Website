@@ -48,8 +48,8 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4 mb-8"
           ></motion.div>
 
-          <h1 className="text-3xl sm:text-6xl md:text-8xl font-bold text-gray-200 tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
-            ELECTROMAGNETIC
+          <h1 className="text-2xl sm:text-4xl text-metallic-red md:text-6xl font-bold text-gray-200 tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
+            UNIQUE DC
             <br />
             <span className="text-metallic-red inline-block mt-2">
               MOTORS & BRAKES
@@ -57,9 +57,9 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-22 font-light tracking-tight">
-            We Design and Manufacture automation & motion control systems for{" "}
+            We design and manufacture high-performance electromagnetic motors .{" "}
             <br />
-            heavy-duty industrial applications.
+            and advanced brake control systems engineered for demanding industrial applications
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -321,7 +321,7 @@ export default function Home() {
       <Section
         title="Industries We Empower"
         subtitle="Global Reach"
-        className="bg-slate-100 uppercase"
+        className="bg-slate-100 uppercase text-metallic-green"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
