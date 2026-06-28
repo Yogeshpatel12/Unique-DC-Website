@@ -20,7 +20,7 @@
   }
 
   .bg-metallic-red {
-    background: linear-gradient(135deg, #b1ac99 0%, #a2c8cd 80%, #9c9582 100%);
+    background: linear-gradient(135deg, #fcd538 0%, #4ee1f4 80%, #f8d340 100%);
     background-size: 200% auto;
     animation: shine 3s linear infinite;
   }

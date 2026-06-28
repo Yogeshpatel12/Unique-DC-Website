@@ -5,14 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
-  Shield,
-  Settings,
-  Truck,
   Award,
-  Zap,
-  CheckCircle2,
   ArrowRight,
-  Play,
   Download,
   BadgeCheck,
   TrendingUp,
@@ -28,17 +22,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 opacity-100">
-        <img
-          src="/images/Motor.jpg"
-          alt="Industrial Engineering"
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-      {/* Metallic Gradient Effect */}
-      <div className="absolute inset-0 bg-gradient-to-tr  via-slate-900/80 to-transparent" />
+    <section className="relative h-[89vh] flex items-center justify-center overflow-hidden bg-slate-950">
+      {/* Red Radial Gradient Effect matched from Products header */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.1),transparent_70%)]" />
 
       <div className="relative z-10 text-center max-w-9xl px-4">
         <div className="hero-text">
@@ -46,9 +32,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center gap-4 mb-8"
-          ></motion.div>
+          />
 
-          <h1 className="text-2xl sm:text-4xl text-metallic-red md:text-6xl font-bold text-gray-200 tracking-tightr mb-8 leading-[0.8] drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-4xl text-metallic-red md:text-7xl font-bold text-gray-200 tracking-tight mb-8 leading-[0.8] drop-shadow-2xl">
             UNIQUE DC
             <br />
             <span className="text-metallic-red inline-block mt-2">
@@ -56,14 +42,14 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-22 font-light tracking-tight">
-            We design and manufacture high-performance electromagnetic motors .{" "}
+          <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-22 font-light tracking-tight">
+            We design and manufacture high-performance electromagnetic motors{" "}
             <br />
-            and advanced brake control systems engineered for demanding industrial applications
+            and advanced brake control systems engineered for demanding
+            industrial applications
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-
             <button
               onClick={handleExplore}
               className="group relative px-10 py-5 border border-white/10 text-white font-bold rounded-sm overflow-hidden transition-all"
@@ -120,7 +106,7 @@ const trustItems = [
 ];
 
 const TrustIndicators = () => (
-  <section className="py-10  border-b border-white/10">
+  <section className="py-10 border-b border-white/10">
     <div className="max-w-7xl mx-auto px-4">
       <div className="bg-black grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {trustItems.map((item, index) => {
@@ -129,10 +115,9 @@ const TrustIndicators = () => (
           return (
             <div
               key={index}
-              className="group h-52 bg-white/5 border border-white/10 rounded-1xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/10 hover:border-yellow/30 transition-all duration-300 hover:-translate-y-1"
+              className="group h-52 bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-white/10 hover:border-yellow-500/30 transition-all duration-300 hover:-translate-y-1"
             >
-              <Icon className="w-10 h-10 text-yellow-500 mb-4 group-hover:scale-110 transition-transform" />
-
+              <Icon className="w-10 h-10 shrink-0 text-yellow-500 mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-white font-bold text-lg md:text-xl">
                 {item.title}
               </h3>
@@ -173,7 +158,7 @@ const Section = ({
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl  md:text-5xl font-bold tracking-tight text-slate-600"
+          className="text-4xl md:text-5xl font-bold tracking-tight text-slate-600"
         >
           {title}
         </motion.h2>
@@ -197,7 +182,7 @@ const WorkflowSection = () => (
         },
         {
           step: "02",
-          title: "Precision  ",
+          title: "Precision ",
           desc: "CNC milling with micron-level tolerances for mating surfaces.",
         },
         {
@@ -222,6 +207,7 @@ const WorkflowSection = () => (
     </div>
   </Section>
 );
+
 const clientLogos = [
   "/images/Vedanta_Logo.png",
   "/images/Jsw_Logo.png",
@@ -244,48 +230,22 @@ const ClientLogosSection = () => (
         <p className="text-yellow-500 font-bold uppercase tracking-widest text-lg mb-4">
           Trusted By Industry Leaders
         </p>
-
         <h2 className="text-4xl md:text-5xl font-bold text-gray-700 mb-6">
           OUR CLIENTS
         </h2>
-
-        {/* <p className="text-slate-600 max-w-3xl mx-auto">
-          Trusted by leading crane manufacturers, steel plants,
-          automation companies, logistics operators and industrial
-          engineering organizations.
-        </p> */}
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {clientLogos.map((logo, index) => (
           <div
             key={index}
-            className="
-        h-36
-        bg-white
-        border
-        border-slate-200
-        rounded-sm
-        flex
-        items-center
-        justify-center
-        p-4
-        hover:shadow-lg
-        transition-all
-      "
+            className="h-36 bg-white border border-slate-200 rounded-sm flex items-center justify-center p-4 hover:shadow-lg transition-all"
           >
             <img
               src={logo}
               alt={`Client ${index + 1}`}
-              className="
-          max-h-20
-          max-w-full
-          object-contain
-          opacity-70
-          hover:opacity-100
-          transition-all
-          duration-300
-        "
+              className="max-h-20 max-w-full object-contain opacity-70 hover:opacity-100 transition-all duration-300"
+              referrerPolicy="no-referrer"
             />
           </div>
         ))}
@@ -298,7 +258,6 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // GSAP for subtle text animation in hero
   useGSAP(
     () => {
       gsap.from(".hero-text", {
@@ -316,6 +275,46 @@ export default function Home() {
     <div ref={containerRef} className="relative pt-20 overflow-hidden">
       <div ref={heroRef} className="relative z-10">
         <HeroSection />
+        <Section
+          title="Engineering Confidence"
+          subtitle="Manufacturing Excellence in Action"
+          className="bg-slate-50 uppercase"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="relative rounded-sm overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+              <img
+                src="/images/Main_Brake.png"
+                alt="Main Brake"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="relative rounded-sm overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+              <img
+                src="/images/Motor.png"
+                alt="Motor Specs"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="relative rounded-sm overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+              <img
+                src="/images/Liner.png"
+                alt="Motor Specs"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="relative rounded-sm overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
+              <img
+                src="/images/Rectiffier.png"
+                alt="Motor Specs"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </Section>
       </div>
 
       <Section
@@ -328,26 +327,32 @@ export default function Home() {
             {
               name: "Heavy Duty Cranes",
               img: "/images/Crane.avif",
+              tag: "cranes",
             },
             {
               name: "Motor Manufacturing",
               img: "/images/Motor.jpg",
+              tag: "motors",
             },
             {
               name: "Wind Turbines",
               img: "/images/Windmills.jpg",
+              tag: "turbines",
             },
             {
               name: "Elevators & Lifts",
               img: "/images/Elevators.jpg",
+              tag: "elevators",
             },
             {
               name: "Construction & Mining",
               img: "/images/Mining1.png",
+              tag: "mining",
             },
             {
               name: "Textile & Printing",
               img: "/images/Textile.jpg",
+              tag: "textile",
             },
           ].map((item) => (
             <motion.div
@@ -357,6 +362,7 @@ export default function Home() {
             >
               <img
                 src={item.img}
+                alt={item.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 referrerPolicy="no-referrer"
               />
@@ -369,29 +375,6 @@ export default function Home() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </Section>
-
-      <Section
-        title="Engineering Confidence"
-        subtitle="Manufacturing Excellence in Action"
-        className="bg-slate-50 uppercase"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
-            <img
-              src="/images/Main_Brake.png"
-              className="w-full h-full object-cover transition-transform duration-500  hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="relative rounded-1xl overflow-hidden aspect-square md:aspect-auto md:h-[600px]">
-            <img
-              src="/images/Motor.png"
-              className="w-full h-full object-cover transition-transform duration-500  hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
         </div>
       </Section>
 
@@ -408,6 +391,7 @@ export default function Home() {
           <div className="absolute inset-0 opacity-80">
             <img
               src="/images/Mining1.png"
+              alt="Mining Application Background"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -440,8 +424,6 @@ export default function Home() {
           </div>
         </div>
       </Section>
-
-      {/* Final section to show drop completion */}
     </div>
   );
 }
