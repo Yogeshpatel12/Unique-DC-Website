@@ -219,7 +219,7 @@ const clientLogos = [
   "/images/Shapoorji_Logo.png",
   "/images/Welspun_Logo.png",
   "/images/Crompton_Logo.png",
-  "/images/Electromech_Logo.png",
+  "/images/Suzlon_Logo.png",
   "/images/BharatBijli_Logo.jpg",
 ];
 

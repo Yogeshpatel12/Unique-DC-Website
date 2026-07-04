@@ -431,18 +431,23 @@ export const Footer = () => {
                   backgroundColor: theme.blue,
                   boxShadow: `0 4px 14px ${theme.blue}1a`,
                 }}
-                className="flex-1 sm:flex-none px-5 py-2 text-metallic-red text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap"
+                className="flex-1 sm:flex-none px-5 py-2  text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap"
               >
                 ISO 9001:2015
               </div>
-              <div className="flex-1 sm:flex-none px-5 py-2 border text-metallic-red border-white/5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] bg-white/[0.02] text-center whitespace-nowrap">
+              <div style={{
+                  backgroundColor: theme.blue,
+                  boxShadow: `0 4px 14px ${theme.blue}1a`,
+                }}
+              
+              className="flex-1 sm:flex-none px-5 py-2  text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap">
                 MSME CERTIFIED
               </div>
             </div>
           </div>
         </div>
         <div className="text-center text-xs ">Made with ❤️ by YOGESH PATEL</div>
-        <div className="text-center text-xs  text-metallic-red">
+        <div className="text-center text-xs ">
           Contact: +91-6375360041, yp766104@gmail.com
         </div>
       </div>
