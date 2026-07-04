@@ -74,7 +74,9 @@ export default function Contact() {
 
             <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
               Let's Build Something
-              <span className="block text-metallic-red text-yellow-500">Reliable Together</span>
+              <span className="block text-metallic-red text-yellow-500">
+                Reliable Together
+              </span>
             </h1>
 
             <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12">
@@ -337,6 +339,47 @@ export default function Contact() {
             {/* Animated Border */}
             <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-slate-600 via-transparent to-slate-600 bg-clip-border opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </motion.a>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-24 bg-slate-800">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-4 uppercase">
+              Send Us Your Requirement
+            </h2>
+
+            <p className="text-slate-300 text-lg max-w-3xl mx-auto">
+              Fill out the form below and our engineering team will contact you
+              within 24 hours with the best solution for your application.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200"
+          >
+            <iframe
+              title="Contact Form"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSd2hLhKc6kHawpXCFSJsVtI0ugK9ZbU1IIPgmRoY8u0gJds8g/viewform?embedded=true"
+              width="100%"
+              height="1300"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              className="w-full"
+            >
+              Loading…
+            </iframe>
+          </motion.div>
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 // Removed Trophy, Users, Globe2, History as they are no longer used
-import aboutImg from "../assets/Crane.avif"; // Adjust path based on your folder structure
+import aboutImg from "../assets/Motor.png"; // Adjust path based on your folder structure
 
 export default function About() {
   return (
