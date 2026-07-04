@@ -10,7 +10,7 @@ const products = [
     cat: "Electromagnetic",
     torque: "200 Nm",
     voltage: "440V DC",
-    image: "/images/Handle.png",
+    image: "/images/SingleBrake.png",
   },
   {
     id: 2,

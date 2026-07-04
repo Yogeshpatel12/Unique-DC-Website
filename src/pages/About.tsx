@@ -5,18 +5,18 @@ import aboutImg from "../assets/Handle_Brake.jpg"; // Adjust path based on your 
 
 export default function About() {
   return (
-    <div className="pt-20">
+    <div className="pt-8">
       {/* Hero Section with Background Image */}
       <section
-        className="relative py-32 md:py-48 bg-slate-950 text-white overflow-hidden"
+        className="relative py-42 md:py-48 bg-slate-950 text-white overflow-hidden bg-left md:bg-right"
         style={{
           backgroundImage: `linear-gradient(to right,  rgba(2, 6, 23, 0.4)), url(${aboutImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "right center",
+          // backgroundPosition: "right center",
         }}
       >
         {/* Red accent overlay */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-red/10 skew-x-12 translate-x-20" />
+        <div className="absolute top-0 right-0 w-1/3 h-full  skew-x-12 translate-x-20" />
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <motion.div
@@ -31,7 +31,7 @@ export default function About() {
               DECADE OF <br />
               EXCELLENCE.
             </h1>
-            <h2 className="text-brand-red font-bold uppercase tracking-widest text-xs mb-4">
+            <h2 className="text-yellow-400 font-bold uppercase tracking-widest text-xs mb-4">
               Our Legacy
             </h2>
             <p className="text-slate-200 text-lg leading-relaxed">
@@ -57,11 +57,11 @@ export default function About() {
               />
             </div>
             <div>
-              <h3 className="text-3xl font-bold mb-6 text-slate-900 tracking-tight">
+              <h3 className="text-3xl font-bold mb-6 text-yellow-500 tracking-tight">
                 Our Mission
               </h3>
               <p className="text-slate-600 leading-relaxed mb-8">
-                At <b>UNIQUE DC</b>, we design and manufacture high-performance
+                At <b className="text-yellow-500">UNIQUE DC</b>, we design and manufacture high-performance
                 motion control systems specifically engineered for heavy-duty
                 industrial applications. We understand that in demanding
                 environments-where immense force, precision, and zero-downtime
@@ -76,7 +76,7 @@ export default function About() {
               <div className="grid grid-cols-2 gap-8">
                 <div>
                   <h4 className="text-4xl font-bold text-slate-900 mb-2">
-                    500+
+                    250+
                   </h4>
                   <p className="text-slate-500 text-sm">Global Clients</p>
                 </div>

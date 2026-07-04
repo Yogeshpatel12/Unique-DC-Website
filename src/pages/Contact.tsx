@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <div className="pt-5">
       {/* Hero Section */}
-      <section className="relative bg-slate-950 py-28 md:py-32 text-white overflow-hidden">
+      <section className="relative bg-slate-950 py-28 md:py-22 text-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(248,113,113,0.3),_transparent_50%)]" />
@@ -87,7 +87,7 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="tel:+917976958311"
+                href="tel:+918233268311"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center text-metallic-red gap-3 px-8 py-4 text-white font-bold uppercase tracking-widest rounded-full shadow-lg shadow-brand-red/25 hover:shadow-sm hover:shadow-brand-yellow/30 transition-all"

@@ -428,16 +428,16 @@ export const Footer = () => {
             <div className="flex gap-3 w-full sm:w-auto justify-center">
               <div
                 style={{
-                  backgroundColor: theme.blue,
-                  boxShadow: `0 4px 14px ${theme.blue}1a`,
+                  backgroundColor: theme.logoYellow,
+                  boxShadow: `0 4px 14px ${theme.logoYellow}1a`,
                 }}
                 className="flex-1 sm:flex-none px-5 py-2  text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap"
               >
                 ISO 9001:2015
               </div>
               <div style={{
-                  backgroundColor: theme.blue,
-                  boxShadow: `0 4px 14px ${theme.blue}1a`,
+                  backgroundColor: theme.logoYellow,
+                  boxShadow: `0 4px 14px ${theme.logoYellow}1a`,
                 }}
               
               className="flex-1 sm:flex-none px-5 py-2  text-white text-[10px] font-black uppercase tracking-[0.2em] text-center whitespace-nowrap">

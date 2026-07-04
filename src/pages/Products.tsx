@@ -10,12 +10,12 @@ import { downloadPDF } from "../lib/download";
 const products = [
   {
     id: 1,
-    name: "DC Motor Brake",
+    name: "DC MOTOR BRAKE",
     cat: "Electromagnetic",
-    torque: "200 Nm",
+    torque: "10 - 200 Nm",
     voltage: "440V DC",
-    image: "/images/Handle.png",
-    
+    image: "/images/SingleBrake.png",
+
   },
   {
     id: 2,
@@ -35,15 +35,15 @@ const products = [
   },
   {
     id: 4,
-    name: "ELECTROMAGNETIC BRAKES",
+    name: "COMBINATION",
     cat: "Hydraulic",
     torque: "800 Nm",
     voltage: "440V DC",
-    image: "/images/Brake_65.png",
+    image: "/images/Combination_Brake_2.png",
   },
   {
     id: 5,
-    name: "CLUTCH BRAKE COMBINATION",
+    name: "COMBINATION",
     cat: "Electromagnetic",
     torque: "1000 Nm",
     voltage: "440V DC",
@@ -51,11 +51,11 @@ const products = [
   },
   {
     id: 6,
-    name: "ALUMINUM LINERS",
+    name: "BRAKE",
     cat: "Disc Brakes",
     torque: "1200 Nm",
     voltage: "440V DC",
-    image: "/images/Liner.png",
+    image: "/images/Main_Brake_5.png",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const products = [
     cat: "Custom Brakes",
     torque: "1600 Nm",
     voltage: "440V DC",
-    image: "/images/pro1.png",
+    image: "/images/BrakeMotor2.png",
   },
   {
     id: 9,
@@ -91,11 +91,11 @@ const products = [
   },
   {
     id: 11,
-    name: "FRICTION PLATES",
+    name: "COIL BRAKE",
     cat: "Electromagnetic",
     torque: "1400 Nm",
     voltage: "440V DC",
-    image: "/images/Rectiffier.png",
+    image: "/images/CoilBrake.png",
   },
   {
     id: 12,
@@ -103,7 +103,7 @@ const products = [
     cat: "Custom Brakes",
     torque: "1600 Nm",
     voltage: "440V DC",
-    image: "/images/pro1.png",
+    image: "/images/Accessories.png",
   },
 ];
 
