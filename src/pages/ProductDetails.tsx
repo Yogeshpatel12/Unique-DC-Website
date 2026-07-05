@@ -6,82 +6,92 @@ import { ArrowLeft, Send, ShieldCheck, FileText } from "lucide-react";
 const products = [
   {
     id: 1,
-    name: "DC MOTOR BRAKE",
-    cat: "Electromagnetic",
-    torque: "200 Nm",
-    voltage: "440V DC",
+    name: "FAIL-SAFE BRAKE",
+    cat: "USB & UMB (Normally On)",
+    torque: "2 - 1600 Nm",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/SingleBrake.png",
   },
   {
     id: 2,
-    name: "FAIL-SAFE BRAKE",
-    cat: "Disc Brakes",
-    torque: "400 Nm",
-    voltage: "440V DC",
+    name: "BRAKE",
+    cat: "USB & UMB (Normally On)",
+    torque: "2 - 1600 Nm",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/Main_Brake.png",
   },
   {
     id: 3,
     name: "DC MOTORS",
-    cat: "Electromagnetic",
-    torque: "600 Nm",
-    voltage: "440V DC",
+    cat: "UBM (1440 RPM)",
+    torque: "Power : 0.25 - 20 Hp",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/Motor.png",
   },
   {
     id: 4,
-    name: "ELECTROMAGNETIC BRAKES",
-    cat: "Hydraulic",
-    torque: "800 Nm",
-    voltage: "440V DC",
-    image: "/images/Brake_65.png",
+    name: "NMRV GEAR BOX",
+    cat: "0.5 KW",
+    torque: "Worm",
+    voltage: "Input : 3 - 10 Hp",
+    material: "Cast Iron",
+    image: "/images/Nmrv.png",
   },
   {
     id: 5,
-    name: "CLUTCH BRAKE COMBINATION",
-    cat: "Electromagnetic",
-    torque: "1000 Nm",
-    voltage: "440V DC",
+    name: "COMBINATION",
+    cat: "UCB",
+    torque: "15 - 500 Nm",
+    voltage: "24/96/190 V DC",
+    material: "Cast Iron",
     image: "/images/Combination_Brake.png",
   },
   {
     id: 6,
-    name: "ALUMINUM LINERS",
-    cat: "Disc Brakes",
-    torque: "1200 Nm",
-    voltage: "440V DC",
-    image: "/images/Liner.png",
+    name: "FALSE-SAFE BRAKE",
+    cat: "Type : USB & UMB (Normally On)",
+    torque: "2 - 1600 Nm",
+    voltage: "190V DC",
+    material: "Cast Iron",
+    image: "/images/Main_Brake_5.png",
   },
   {
     id: 7,
     name: "RECTIFIERS",
-    cat: "Electromagnetic",
-    torque: "1400 Nm",
-    voltage: "440V DC",
+    cat: "UFC",
+    torque: "15 - 500 Nm",
+    voltage: "190V DC",
+    material: "Hard Plastics",
     image: "/images/Rectiffier.png",
   },
   {
     id: 8,
     name: "HUB MOUNT BRAKE",
-    cat: "Custom Brakes",
+    cat: "UBM",
     torque: "1600 Nm",
-    voltage: "440V DC",
-    image: "/images/pro1.png",
+    voltage: "190V DC",
+    material: "Cast Iron",
+    image: "/images/BrakeMotor2.png",
   },
   {
     id: 9,
     name: "CLUTCH BRAKE",
-    cat: "Electromagnetic",
-    torque: "1000 Nm",
-    voltage: "440V DC",
+    cat: "UCB",
+    torque: "15 - 500 Nm",
+    voltage: "24/96/190V DC",
+    material: "Cast Iron",
     image: "/images/Clutch_Brake.png",
   },
   {
     id: 10,
     name: "LINERS",
-    cat: "Disc Brakes",
-    torque: "1200 Nm",
-    voltage: "440V DC",
+    cat: "UFB",
+    torque: "2 -1200 Nm",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/Liner.png",
   },
   {
@@ -89,7 +99,8 @@ const products = [
     name: "FRICTION PLATES",
     cat: "Electromagnetic",
     torque: "1400 Nm",
-    voltage: "440V DC",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/Rectiffier.png",
   },
   {
@@ -97,7 +108,8 @@ const products = [
     name: "ACCESSORIES",
     cat: "Custom Brakes",
     torque: "1600 Nm",
-    voltage: "440V DC",
+    voltage: "190V DC",
+    material: "Cast Iron",
     image: "/images/pro1.png",
   },
 ];
@@ -152,40 +164,45 @@ export default function ProductDetails() {
           {/* Clean Specifications Area */}
           <div className="flex flex-col">
             <div className="mb-4">
-              <h1 className="text-3xl md:text-5xl font-bold text-slate-800 tracking-tight leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-slate-800 tracking-tight leading-tight">
                 {product.name}
-              </h1>
-              <p className="text-slate-400 text-sm font-medium italic">
-                Industrial Grade Component
-              </p>
+              </h2>
             </div>
-
-            <p className="text-slate-600 text-lg font-light leading-relaxed ">
-              This model is designed for high-cycle industrial failsafe
-              operation. Engineered for zero-latency response and maximum
-              thermal resilience in heavy-duty machinery environments.
-            </p>
 
             {/* Simple Data Table */}
             <div className="border-t border-slate-100 py-6 mb-10">
               <div className="flex justify-between py-4 border-b border-slate-50">
-                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                  Torque Rating
+                <span className="text-slate-400 text-[12px] font-bold uppercase tracking-widest">
+                  Type :
+                </span>
+                <span className="text-slate-900 font-bold">{product.cat}</span>
+              </div>
+              <div className="flex justify-between py-4 border-b border-slate-50">
+                <span className="text-slate-400 text-[12px] font-bold uppercase tracking-widest">
+                  Torque :
                 </span>
                 <span className="text-slate-900 font-bold">
                   {product.torque}
                 </span>
               </div>
               <div className="flex justify-between py-4 border-b border-slate-50">
-                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                  Operating Voltage
+                <span className="text-slate-400 text-[12px] font-bold uppercase tracking-widest">
+                  Voltage :
                 </span>
                 <span className="text-slate-900 font-bold">
                   {product.voltage}
                 </span>
               </div>
+              <div className="flex justify-between py-4 border-b border-slate-50">
+                <span className="text-slate-400 text-[12px] font-bold uppercase tracking-widest">
+                  Material :
+                </span>
+                <span className="text-slate-900 font-bold">
+                  {product.material}
+                </span>
+              </div>
               <div className="flex justify-between py-4">
-                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+                <span className="text-slate-400 text-[12px] font-bold uppercase tracking-widest">
                   Compliance
                 </span>
                 <span className="text-slate-900 font-bold flex items-center gap-2">
@@ -213,6 +230,13 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
+
+
+
+
+
+
+      
     </div>
   );
 }

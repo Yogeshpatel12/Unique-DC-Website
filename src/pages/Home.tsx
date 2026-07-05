@@ -13,74 +13,96 @@ import {
   Flag,
 } from "lucide-react";
 import { downloadPDF } from "../lib/download";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-  const handleExplore = () => {
-    window.location.href = "/products";
-  };
-
   return (
-    <section className="relative h-[89vh] flex items-center justify-center overflow-hidden bg-slate-950">
-      {/* Red Radial Gradient Effect matched from Products header */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.1),transparent_70%)]" />
+    <section className="relative h-[89vh] overflow-hidden">
 
-      <div className="relative z-10 text-center max-w-9xl px-4">
-        <div className="hero-text">
+      {/* ================= Background Slider ================= */}
+      <Swiper
+        modules={[Autoplay, EffectFade]}
+        effect="fade"
+        loop
+        speed={1200}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        className="absolute inset-0 z-0 w-full h-full"
+      >
+        <SwiperSlide>
+          <img
+            src="/images/Motor.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <img
+            src="/images/HeroImage.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <img
+            src="/images/Windmills.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </SwiperSlide>
+      </Swiper>
+
+      {/* ================= Dark Overlay ================= */}
+      <div className="absolute inset-0 bg-black/55 z-10"></div>
+
+      {/* ================= Red Gradient ================= */}
+      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.12),transparent_70%)] z-20"></div> */}
+
+      {/* ================= Hero Content ================= */}
+      <div className="absolute inset-0 z-30 flex items-center justify-center">
+        <div className="hero-text text-center px-4">
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center gap-4 mb-8"
           />
 
-          <h1 className="text-3xl sm:text-4xl text-metallic-red md:text-7xl font-bold text-gray-200 tracking-tight mb-8 leading-[0.8] drop-shadow-2xl">
+          <h1 className="text-3xl text-metallic-red sm:text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] text-white drop-shadow-2xl">
             UNIQUE DC
             <br />
-            <span className="text-metallic-red inline-block mt-2">
+            <span className="text-metallic-red">
               MOTORS & BRAKES
             </span>
           </h1>
-
-          <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-22 font-light tracking-tight">
-            We design and manufacture high-performance electromagnetic motors{" "}
-            <br />
-            and advanced brake control systems engineered for demanding
-            industrial applications
+          <p className="mt-2 text-sm sm:text-xl md:text-1xl text-white drop-shadow-lg">
+            Motor Brake Manufacturers from Udaipur, RJ.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button
-              onClick={handleExplore}
-              className="group relative px-10 py-5 border border-white/10 text-white font-bold rounded-sm overflow-hidden transition-all"
-            >
-              <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              <span className="relative z-10 flex items-center gap-3 uppercase tracking-widest text-xs">
-                Our Products{" "}
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </span>
-            </button>
+          
 
-            <button
-              onClick={() =>
-                downloadPDF(
-                  "Technical Datasheet",
-                  "Complete range of Unique DC Brakes specifications.",
-                )
-              }
-              className="px-10 py-5 border border-white/10 text-white font-bold rounded-sm hover:bg-white/5 hover:text-white transition-all uppercase tracking-widest text-xs flex items-center gap-3 "
-            >
-              <Download size={16} /> Our Catalogue
-            </button>
-          </div>
         </div>
+        
+        
       </div>
+      
+
     </section>
+    
   );
 };
+
+
 
 const trustItems = [
   {

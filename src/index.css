@@ -12,9 +12,9 @@
 
 @layer utilities {
   .text-metallic-red {
-    background: linear-gradient(135deg, #ebc324 40%, #12c9e1 80%, #edbc2a 100%);
+    background: linear-gradient(90deg, #ebc324 40%, #12c9e1 80%, #edbc2a 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent ;
     background-size: 200% auto;
     animation: shine 3s linear infinite;
   }
@@ -30,6 +30,7 @@
       background-position: 200% center;
     }
   }
+  
 
   .bg-grid-pattern {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
