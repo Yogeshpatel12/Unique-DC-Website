@@ -135,7 +135,7 @@ export default function Products() {
   };
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
+    <div className="pt-20 bg-white min-h-screen ">
       {/* Hero Header */}
       <header className="relative bg-slate-950 py-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,46,0.1),transparent_70%)]" />
@@ -228,259 +228,6 @@ export default function Products() {
         </div>
       </main>
 
-
-      
-
-      {/* Technical Specifications Table from image_293b8f.png */}
-
-      <div className="mt-0  mx-4 md:m-40 border-t border-slate-200 pt-10">
-        <h3 className="text-lg md:text-xl font-bold text-center text-slate-900 mb-2 uppercase tracking-widest">
-          BRAKE DIMENSIONS (mm) - UCB, UFB, USB, UMB, UBM
-        </h3>
-        <p className="text-xs md:text-md font-bold text-center text-slate-900 mb-6 uppercase tracking-widest">
-          Fail-Safe Brake Dimensions (With Handle)
-        </p>
-
-        <div className="w-full">
-          {/* table-fixed forces columns to fit the screen width */}
-          <table className="w-full table-fixed border-collapse border border-slate-200 text-[8px] md:text-sm">
-            <thead>
-              <tr className="bg-slate-50">
-                {/* Constrained parameter column width */}
-                <th className="p-1 md:p-3 border border-slate-200 text-[8px] md:text-xs font-bold text-yellow-600 uppercase truncate">
-                  Parameter
-                </th>
-                {[
-                  "Size-08",
-                  "Size-10",
-                  "Size-12",
-                  "Size-14",
-                  "Size-16",
-                  "Size-18",
-                ].map((size) => (
-                  <th
-                    key={size}
-                    className="p-1 md:p-3 border border-slate-200 text-[8px] md:text-xs font-bold text-yellow-600 uppercase text-center"
-                  >
-                    {size}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="text-[8px] md:text-sm">
-              <tr>
-                <td className="p-1 md:p-3 border border-slate-200 font-bold text-slate-500 truncate">
-                  Supply Voltage
-                </td>
-                {Array(6)
-                  .fill("24/190Vdc")
-                  .map((v, i) => (
-                    <td
-                      key={i}
-                      className="p-1 md:p-3 border border-slate-200 text-slate-700 text-center truncate"
-                    >
-                      {v}
-                    </td>
-                  ))}
-              </tr>
-              {[
-                {
-                  label: "A",
-                  data: ["105", "128", "148", "164", "188", "212"],
-                },
-                { label: "B", data: ["55", "66", "74", "86", "103", "99"] },
-                {
-                  label: "C (Rotor Od)",
-                  data: ["78", "95", "115", "125", "150", "174"],
-                },
-                { label: "D", data: ["30", "42", "50", "57", "70", "80"] },
-                {
-                  label: "E (Rotor Od)",
-                  data: [
-                    "15/19",
-                    "15/19",
-                    "19/24",
-                    "24/28",
-                    "32/38/p",
-                    "34/38/p",
-                  ],
-                },
-                {
-                  label: "F",
-                  data: ["36", "42.5", "48", "54.5", "63.5", "63.5"],
-                },
-                { label: "H", data: ["42", "44", "50", "57", "70", "80"] },
-                { label: "P", data: ["20", "20", "26", "30", "30", "38"] },
-                {
-                  label: "Torque (Nm)",
-                  data: ["10", "20", "34", "65", "85", "155"],
-                },
-              ].map((row) => (
-                <tr key={row.label} className="hover:bg-slate-50">
-                  <td className="p-1 md:p-3 border border-slate-200 font-bold text-slate-500 truncate">
-                    {row.label}
-                  </td>
-                  {row.data.map((val, i) => (
-                    <td
-                      key={i}
-                      className="p-1 md:p-3 border border-slate-200 text-slate-700 text-center truncate"
-                    >
-                      {val}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-
-
-      {/* Rotor Dimensions Table from image_29a8c8.png */}
-
-      <div className="mt-0 mx-4 md:m-40 border-t border-slate-200 pt-0">
-        <h3 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-widest">
-          Rotor Dimensions
-        </h3>
-
-        {/* Added 'w-full' and ensured no overflow container is used */}
-        <div className="w-full">
-          {/* 
-      1. table-fixed: Forces columns to share the available width equally.
-      2. text-[7px] md:text-sm: Further reduction for mobile readability.
-    */}
-          <table className="w-full table-fixed border-collapse border border-slate-200 text-[7px] md:text-sm">
-            <thead>
-              <tr className="bg-slate-50">
-                {/* Constrained parameter column */}
-                <th className="p-1 md:p-3 border border-slate-200 font-bold text-slate-500 uppercase truncate">
-                  Param
-                </th>
-                {["S-08", "S-10", "S-12", "S-14", "S-16", "S-18"].map(
-                  (size) => (
-                    <th
-                      key={size}
-                      className="p-1 md:p-3 border border-slate-200 font-bold text-slate-900 uppercase text-center"
-                    >
-                      {size}
-                    </th>
-                  ),
-                )}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                {
-                  label: "A(od)",
-                  data: ["78", "96", "115", "125", "150", "175"],
-                },
-                {
-                  label: "B(Std)",
-                  data: ["14,15", "15,19", "19,24,28", "24,28", "32,38", "34"],
-                },
-                { label: "B(Non)", data: ["19", "24", "24", "28", "34", "38"] },
-                {
-                  label: "C(Std)",
-                  data: ["36", "42.5", "48", "54.5", "65", "74"],
-                },
-                { label: "C(Non)", data: ["40", "42.5", "-", "-", "-", "-"] },
-                {
-                  label: "D(thk)",
-                  data: ["9", "10.5", "12", "13", "15", "16"],
-                },
-              ].map((row) => (
-                <tr key={row.label} className="hover:bg-slate-50">
-                  <td className="p-1 md:p-3 border border-slate-200 font-bold text-slate-500 truncate text-[6px] md:text-sm">
-                    {row.label}
-                  </td>
-                  {row.data.map((val, i) => (
-                    <td
-                      key={i}
-                      className="p-1 md:p-3 border border-slate-200 text-slate-700 text-center truncate"
-                    >
-                      {val}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-
-
-
-      {/* Rectifier Dimension Table */}
-
-      <div className="mt-12 mx-4 md:m-40 border-t border-slate-200 pt-0">
-        <h3 className="text-xl font-bold text-slate-900 mb-6 uppercase tracking-widest">
-          Series: Full Wave & Half Wave Rectifiers
-        </h3>
-
-        <div className="w-full">
-          {/* Consistent table-fixed layout to match the previous table size */}
-          <table className="w-full table-fixed border-collapse border border-slate-200 text-[10px] md:text-sm">
-            <thead>
-              <tr className="bg-slate-50">
-                <th className="p-2 md:p-3 border border-slate-200 font-bold text-slate-500 uppercase truncate">
-                  Model
-                </th>
-                <th className="p-2 md:p-3 border border-slate-200 font-bold text-slate-500 uppercase truncate">
-                  Input(AC)
-                </th>
-                <th className="p-2 md:p-3 border border-slate-200 font-bold text-slate-500 uppercase truncate">
-                  Output(DC)
-                </th>
-                <th className="p-2 md:p-3 border border-slate-200 font-bold text-slate-500 uppercase truncate">
-                  Dim (mm)
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                {
-                  model: "UB 501A",
-                  input: "415 Vac",
-                  output: "190 Vac, 2 amp",
-                  dim: "52*45*23",
-                },
-                {
-                  model: "UB 501B",
-                  input: "230 Vac",
-                  output: "190 Vac, 2 amp",
-                  dim: "52*45*23",
-                },
-              ].map((row) => (
-                <tr key={row.model} className="hover:bg-slate-50">
-                  <td className="p-2 md:p-3 border border-slate-200 text-slate-700 text-center truncate">
-                    {row.model}
-                  </td>
-                  <td className="p-2 md:p-3 border border-slate-200 text-slate-700 text-center truncate">
-                    {row.input}
-                  </td>
-                  <td className="p-2 md:p-3 border border-slate-200 text-slate-700 text-center truncate">
-                    {row.output}
-                  </td>
-                  <td className="p-2 md:p-3 border border-slate-200 text-slate-700 text-center truncate">
-                    {row.dim}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-
-
-
-
-
-
       {/* Support Section */}
       <section className="bg-slate-50 border-t border-gray-100 py-2">
         <div className="max-w-7xl mx-auto px-4">
@@ -532,6 +279,194 @@ export default function Products() {
               ))}
             </div>
           </div>
+
+
+
+
+
+
+
+
+
+          <div className="mt-10 mx-4 md:m-10 border-t border-slate-700 pt-10 bg-slate-950 p-6 rounded-lg">
+  <h3 className="text-lg md:text-xl font-bold text-center text-slate-100 mb-4 uppercase tracking-widest">
+    BRAKE DIMENSIONS (mm) - UCB, UFB, USB, UMB, UBM
+  </h3>
+
+  <div className="w-full overflow-x-auto">
+    <table className="w-full table-fixed border-collapse border border-slate-700 text-[8px] md:text-sm text-slate-300">
+      <thead>
+        <tr className="bg-slate-900">
+          <th className="p-1 md:p-3 border text-left border-slate-700 text-[8px] md:text-xs font-bold text-yellow-400 uppercase truncate">
+            Parameter
+          </th>
+          {["Size-08", "Size-10", "Size-12", "Size-14", "Size-16", "Size-18"].map((size) => (
+            <th
+              key={size}
+              className="p-1 md:p-3 border border-slate-700 text-[8px] md:text-xs font-bold text-yellow-400 uppercase text-center"
+            >
+              {size}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="text-[8px] md:text-sm">
+        <tr className="bg-slate-800/50">
+          <td className="p-1 md:p-3 border border-slate-700 font-bold text-slate-200 truncate">
+            Supply Voltage
+          </td>
+          {Array(6).fill("24/190Vdc").map((v, i) => (
+            <td key={i} className="p-1 md:p-3 border border-slate-700 text-slate-300 text-center truncate">
+              {v}
+            </td>
+          ))}
+        </tr>
+        {[
+          { label: "A", data: ["105", "128", "148", "164", "188", "212"] },
+          { label: "B", data: ["55", "66", "74", "86", "103", "99"] },
+          { label: "C (Rotor Od)", data: ["78", "95", "115", "125", "150", "174"] },
+          { label: "D", data: ["30", "42", "50", "57", "70", "80"] },
+          { label: "E (Rotor Od)", data: ["15/19", "15/19", "19/24", "24/28", "32/38/p", "34/38/p"] },
+          { label: "F", data: ["36", "42.5", "48", "54.5", "63.5", "63.5"] },
+          { label: "H", data: ["42", "44", "50", "57", "70", "80"] },
+          { label: "P", data: ["20", "20", "26", "30", "30", "38"] },
+          { label: "Torque (Nm)", data: ["10", "20", "34", "65", "85", "155"] },
+        ].map((row) => (
+          <tr key={row.label} className="hover:bg-slate-800 transition-colors">
+            <td className="p-1 md:p-3 border border-slate-700 font-bold text-slate-400 truncate">
+              {row.label}
+            </td>
+            {row.data.map((val, i) => (
+              <td key={i} className="p-1 md:p-3 border border-slate-700 text-slate-300 text-center truncate">
+                {val}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+          <div className="mt-10 mx-4 md:m-10 border-t border-slate-700 pt-10 bg-slate-950 p-6 rounded-lg">
+  <h3 className="text-xl font-bold text-center text-slate-100 mb-6 uppercase tracking-widest">
+    Rotor Dimensions
+  </h3>
+
+  <div className="w-full overflow-x-auto">
+    <table className="w-full table-fixed border-collapse border border-slate-700 text-[7px] md:text-sm text-slate-300">
+      <thead>
+        <tr className="bg-slate-900">
+          <th className="p-1 md:p-3 border border-slate-700 font-bold text-slate-400 uppercase truncate">
+            Param
+          </th>
+          {["S-08", "S-10", "S-12", "S-14", "S-16", "S-18"].map((size) => (
+            <th
+              key={size}
+              className="p-1 md:p-3 border border-slate-700 font-bold text-yellow-400 uppercase text-center"
+            >
+              {size}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          { label: "A(od)", data: ["78", "96", "115", "125", "150", "175"] },
+          { label: "B(Std)", data: ["14,15", "15,19", "19,24,28", "24,28", "32,38", "34"] },
+          { label: "B(Non)", data: ["19", "24", "24", "28", "34", "38"] },
+          { label: "C(Std)", data: ["36", "42.5", "48", "54.5", "65", "74"] },
+          { label: "C(Non)", data: ["40", "42.5", "-", "-", "-", "-"] },
+          { label: "D(thk)", data: ["9", "10.5", "12", "13", "15", "16"] },
+        ].map((row) => (
+          <tr key={row.label} className="hover:bg-slate-800 transition-colors">
+            <td className="p-1 md:p-3 border border-slate-700 font-bold text-slate-400 truncate text-[6px] md:text-sm">
+              {row.label}
+            </td>
+            {row.data.map((val, i) => (
+              <td
+                key={i}
+                className="p-1 md:p-3 border border-slate-700 text-slate-300 text-center truncate"
+              >
+                {val}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+          {/* Rectifier Dimension Table */}
+
+          <div className="mt-12 mx-4 md:m-10 border-t border-slate-700 pt-10 bg-slate-950 p-6 rounded-lg">
+  <h3 className="text-xl font-bold text-center text-slate-100 mb-6 uppercase tracking-widest">
+    Series: Full Wave & Half Wave Rectifiers
+  </h3>
+
+  <div className="w-full overflow-x-auto">
+    <table className="w-full table-fixed border-collapse border border-slate-700 text-[10px] md:text-sm text-slate-300">
+      <thead>
+        <tr className="bg-slate-900">
+          <th className="p-2 md:p-3 border border-slate-700 font-bold text-yellow-500 uppercase truncate">
+            Model
+          </th>
+          <th className="p-2 md:p-3 border border-slate-700 font-bold text-yellow-500 uppercase truncate">
+            Input(AC)
+          </th>
+          <th className="p-2 md:p-3 border border-slate-700 font-bold text-yellow-500  uppercase truncate">
+            Output(DC)
+          </th>
+          <th className="p-2 md:p-3 border border-slate-700 font-bold text-yellow-500 uppercase truncate">
+            Dim (mm)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          {
+            model: "UB 501A",
+            input: "415 Vac",
+            output: "190 Vac, 2 amp",
+            dim: "52*45*23",
+          },
+          {
+            model: "UB 501B",
+            input: "230 Vac",
+            output: "190 Vac, 2 amp",
+            dim: "52*45*23",
+          },
+        ].map((row) => (
+          <tr key={row.model} className="hover:bg-slate-800 transition-colors">
+            <td className="p-2 md:p-3 border border-slate-700 text-slate-200 text-center truncate font-medium">
+              {row.model}
+            </td>
+            <td className="p-2 md:p-3 border border-slate-700 text-slate-300 text-center truncate">
+              {row.input}
+            </td>
+            <td className="p-2 md:p-3 border border-slate-700 text-slate-300 text-center truncate">
+              {row.output}
+            </td>
+            <td className="p-2 md:p-3 border border-slate-700 text-slate-300 text-center truncate">
+              {row.dim}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
         </div>
       </section>
     </div>
