@@ -162,7 +162,7 @@ export default function Products() {
                 onClick={(e) => {
                   e.preventDefault(); // Prevents default button behavior
                   downloadPDF(
-                    "/files/UniquePdf.pdf",
+                    "/files/Udmc.pdf",
                     "Full_Product_Catalog.pdf",
                   );
                 }}
@@ -285,7 +285,7 @@ export default function Products() {
                   key={i}
                   onClick={() => {
                     const link = document.createElement("a");
-                    link.href = "/files/UniquePdf.pdf";
+                    link.href = "/files/Udmc.pdf";
                     link.setAttribute("download", `${doc.label}.pdf`);
                     document.body.appendChild(link);
                     link.click();

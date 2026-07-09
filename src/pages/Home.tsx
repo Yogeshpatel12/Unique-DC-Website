@@ -410,7 +410,7 @@ export default function Home() {
             </h4>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/files/UniquePdf.pdf"
+                href="/files/Udmc.pdf"
                 download="Full_Product_Catalog.pdf"
                 className="bg-white text-slate-900 px-10 py-5 rounded-sm font-bold hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs inline-block no-underline text-center"
               >

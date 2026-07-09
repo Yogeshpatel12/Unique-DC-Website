@@ -224,7 +224,7 @@ export default function ProductDetails() {
               </a>
 
               <a
-                href="/files/UniquePdf.pdf"
+                href="/files/Udmc.pdf"
                 download="Datasheet.pdf"
                 className="flex items-center justify-center gap-2 text-slate-400 hover:text-slate-900 transition-colors text-[11px] font-bold uppercase tracking-widest py-2"
               >
