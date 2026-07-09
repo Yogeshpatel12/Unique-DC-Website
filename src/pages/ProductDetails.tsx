@@ -87,7 +87,7 @@ const products = [
   },
   {
     id: 10,
-    name: "LINERS",
+    name: "ALUMINIUM LINERS",
     cat: "UFB",
     torque: "2 -1200 Nm",
     voltage: "190V DC",
@@ -96,21 +96,21 @@ const products = [
   },
   {
     id: 11,
-    name: "FRICTION PLATES",
-    cat: "Electromagnetic",
-    torque: "1400 Nm",
-    voltage: "190V DC",
+    name: "FLANGE MOUNT BRAKE",
+    cat: "Type : UFB (Normally Off)",
+    torque: "Torque : 15 - 500 Nm",
+    voltage: "Voltage : 24/96/190V DC",
     material: "Cast Iron",
-    image: "/images/Rectiffier.png",
+    image: "/images/CoilBrake.png",
   },
   {
     id: 12,
     name: "ACCESSORIES",
     cat: "Custom Brakes",
-    torque: "1600 Nm",
+    torque: "Torque : 1 - 1600 Nm",
     voltage: "190V DC",
     material: "Cast Iron",
-    image: "/images/pro1.png",
+    image: "/images/Accessories.png",
   },
 ];
 
@@ -139,7 +139,7 @@ export default function ProductDetails() {
         {/* Simple Navigation */}
         <Link
           to="/products"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-red-600 transition-all font-bold uppercase tracking-widest text-[10px] group"
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-yellow-500 transition-all font-bold uppercase tracking-widest text-[10px] group"
         >
           <ArrowLeft
             size={15}
@@ -206,7 +206,7 @@ export default function ProductDetails() {
                   Compliance
                 </span>
                 <span className="text-slate-900 font-bold flex items-center gap-2">
-                  <ShieldCheck size={17} className="text-red-600" /> ISO
+                  <ShieldCheck size={17} className="text-yellow-500" /> ISO
                   Certified
                 </span>
               </div>
@@ -218,25 +218,22 @@ export default function ProductDetails() {
                 href={`https://wa.me/918233268311?text=${encodeURIComponent(`Hi Unique DC, I Checked out the details for ${product.name}. on the Website.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-950 text-white px-10 py-5 font-bold uppercase tracking-widest text-[11px] hover:bg-red-600 transition-all rounded-sm text-center flex items-center justify-center gap-3 shadow-lg hover:shadow-red-600/20"
+                className="bg-slate-950 text-white px-10 py-5 font-bold uppercase tracking-widest text-[11px] hover:bg-yellow-500 transition-all rounded-sm text-center flex items-center justify-center gap-3 shadow-lg hover:shadow-yellow-500/20"
               >
                 <Send size={16} /> Request Technical Quote
               </a>
 
-              <button className="flex items-center justify-center gap-2 text-slate-400 hover:text-slate-900 transition-colors text-[11px] font-bold uppercase tracking-widest py-2">
+              <a
+                href="/files/UniquePdf.pdf"
+                download="Datasheet.pdf"
+                className="flex items-center justify-center gap-2 text-slate-400 hover:text-slate-900 transition-colors text-[11px] font-bold uppercase tracking-widest py-2"
+              >
                 <FileText size={14} /> Download PDF Datasheet
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
-
-
-
-
-
-      
     </div>
   );
 }

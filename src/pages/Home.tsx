@@ -24,7 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 const HeroSection = () => {
   return (
     <section className="relative h-[89vh] overflow-hidden">
-
       {/* ================= Background Slider ================= */}
       <Swiper
         modules={[Autoplay, EffectFade]}
@@ -71,7 +70,6 @@ const HeroSection = () => {
       {/* ================= Hero Content ================= */}
       <div className="absolute inset-0 z-30 flex items-center justify-center">
         <div className="hero-text text-center px-4">
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,28 +79,16 @@ const HeroSection = () => {
           <h1 className="text-3xl text-metallic-red sm:text-4xl md:text-8xl font-bold tracking-tight leading-[0.85] text-white drop-shadow-2xl">
             UNIQUE DC
             <br />
-            <span className="text-metallic-red">
-              MOTORS & BRAKES
-            </span>
+            <span className="text-metallic-red">MOTORS & BRAKES</span>
           </h1>
           <p className="mt-2 text-sm sm:text-xl md:text-1xl text-white drop-shadow-lg">
             Motor Brake Manufacturers from Udaipur, RJ.
           </p>
-
-          
-
         </div>
-        
-        
       </div>
-      
-
     </section>
-    
   );
 };
-
-
 
 const trustItems = [
   {
@@ -423,17 +409,13 @@ export default function Home() {
               Book your Order within 24 hours.
             </h4>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() =>
-                  downloadPDF(
-                    "Full Catalogue",
-                    "Complete technical specifications for all products.",
-                  )
-                }
-                className="bg-white text-slate-900 px-10 py-5 rounded-sm font-bold hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs"
+              <a
+                href="/files/UniquePdf.pdf"
+                download="Full_Product_Catalog.pdf"
+                className="bg-white text-slate-900 px-10 py-5 rounded-sm font-bold hover:bg-yellow-500 transition-all uppercase tracking-widest text-xs inline-block no-underline text-center"
               >
                 Download Catalogue
-              </button>
+              </a>
               <a
                 href={`https://wa.me/918233268311?text=${encodeURIComponent("Hi Unique DC, I am interested in your industrial braking solutions. Could you please share your latest price list and catalog?")}`}
                 target="_blank"

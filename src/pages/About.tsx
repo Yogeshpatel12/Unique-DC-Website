@@ -5,7 +5,7 @@ import aboutImg from "../assets/Handle_Brake.jpg"; // Adjust path based on your 
 
 export default function About() {
   return (
-    <div className="pt-8">
+    <div className="pt-16">
       {/* Hero Section with Background Image */}
       <section
         className="relative py-42 md:py-48 bg-slate-950 text-white overflow-hidden bg-left md:bg-right"
@@ -15,6 +15,10 @@ export default function About() {
           // backgroundPosition: "right center",
         }}
       >
+
+
+
+
         {/* Red accent overlay */}
         <div className="absolute top-0 right-0 w-1/3 h-full  skew-x-12 translate-x-20" />
 
@@ -25,17 +29,15 @@ export default function About() {
             className="max-w-2xl"
           >
             
-            
-            
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 opacity-0">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-10 opacity-0">
               DECADE OF <br />
               EXCELLENCE.
             </h1>
-            <h2 className="text-yellow-400 font-bold uppercase tracking-widest text-xs mb-4">
+            <h2 className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-4">
               Our Legacy
             </h2>
-            <p className="text-slate-200 text-lg leading-relaxed">
-              Founded on the principles of precision and safety, Unique DC Motor
+            <p className="text-slate-200 text-md leading-relaxed">
+              Founded on the principles of precision and safety, <b>UNIQUE DC</b> Motor
               Brakes has grown from a specialized workshop to a global leader in
               industrial braking technology.
             </p>
@@ -94,7 +96,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="text-4xl font-bold text-slate-900 mb-2">
-                    50+
+                    25+
                   </h4>
                   <p className="text-slate-500 text-sm">Design Patents</p>
                 </div>
