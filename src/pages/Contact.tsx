@@ -36,7 +36,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Support",
-      value: "unique@dcmotorbrakes.com",
+      value: "unique.electromagneticbrake@gmail.com",
       href: "mailto:unique.electromagneticbrake@gmail.com",
       color: "text-yellow-500",
       bgColor: "bg-yellow-50 hover:bg-slate-400",
@@ -97,7 +97,7 @@ export default function Contact() {
               </motion.a>
 
               <motion.a
-                href="mailto:unique,electromagneticbrake@gmail.com"
+                href="mailto:unique.electromagneticbrake@gmail.com"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center text-metallic-red gap-3 px-8 py-4 text-white font-bold uppercase tracking-widest rounded-full shadow-lg shadow-brand-red/25 hover:shadow-sm hover:shadow-brand-yellow/30 transition-all"
@@ -146,7 +146,7 @@ export default function Contact() {
                 whileHover={{ y: -5 }}
                 className={`group relative overflow-hidden rounded-3xl border ${method.borderColor} ${method.bgColor} p-8 transition-all duration-300 hover:shadow-xl`}
               >
-                <div className="relative z-10">
+                <div className="relative z-10 ">
                   <div
                     className={`inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-lg mb-6 ${method.color}`}
                   >
@@ -161,7 +161,7 @@ export default function Contact() {
                     {method.description}
                   </p>
 
-                  <p className="text-lg font-semibold text-slate-900 group-hover:text-slate-700 transition-colors">
+                  <p className="text-sm font-semibold text-slate-900 group-hover:text-slate-700 transition-colors">
                     {method.value}
                   </p>
                 </div>
