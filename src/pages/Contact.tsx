@@ -46,7 +46,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="pt-5">
+    <div className="pt-9">
       {/* Hero Section */}
       <section className="relative bg-slate-950 py-28 md:py-22 text-white overflow-hidden">
         {/* Background Pattern */}
