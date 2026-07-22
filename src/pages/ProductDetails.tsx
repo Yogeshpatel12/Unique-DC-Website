@@ -11,7 +11,7 @@ const products = [
     torque: "2 - 1600 Nm",
     voltage: "190V DC",
     material: "Cast Iron",
-    image: "/images/SingleBrake.png",
+    image: "/images/BH14.png",
   },
   {
     id: 2,

@@ -14,7 +14,7 @@ const products = [
     cat: "Type - USB & UMB (Normally On)",
     torque: "Torque : 2 - 1600 Nm",
     voltage: "Voltage : 190V DC",
-    image: "/images/SingleBrake.png",
+    image: "/images/BH14.png",
   },
   {
     id: 2,

@@ -44,15 +44,15 @@ export default function About() {
               />
             </div>
             <div>
-              <h3 className="text-3xl font-bold mb-6 text-slate-950 tracking-tight border-l-4 border-metallic-red pl-4">
+              <h3 className="text-3xl font-bold mb-6 text-yellow-500 tracking-tight border-l-4 border-metallic-red pl-4">
                 Our Mission
               </h3>
               <p className="text-slate-600 leading-relaxed mb-8">
-                At <b className="text-slate-900">UNIQUE DC</b>, we design and manufacture high-performance
+                At <b className="text-yellow-500">UNIQUE DC</b>, we design and manufacture high-performance
                 motion control systems specifically engineered for heavy-duty
                 industrial applications. We understand that in demanding
-                environments—where immense force, precision, and zero-downtime
-                are non-negotiable—standard solutions simply won't cut it. 
+                environments-where immense force, precision, and zero-downtime
+                are non-negotiable-standard solutions simply won't cut it. 
                 Our robust turnkey systems and custom-engineered components are 
                 built to withstand the harshest conditions.
               </p>
@@ -60,7 +60,7 @@ export default function About() {
               <div className="grid grid-cols-2 gap-8">
                 {[
                   { label: "Global Clients", val: "250+" },
-                  { label: "Brakes Installed", val: "15K+" },
+                  { label: "Brakes Installed", val: "20K+" },
                   { label: "Service Uptime", val: "99.9%" },
                   { label: "Design Patents", val: "25+" },
                 ].map((stat, i) => (

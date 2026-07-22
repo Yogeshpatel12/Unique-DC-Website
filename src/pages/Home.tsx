@@ -102,7 +102,7 @@ const trustItems = [
     icon: BadgeCheck,
   },
   {
-    title: "More than 7+ Years in Business",
+    title: "More than 10+ Years in Business",
     subtitle: "Experience",
     icon: TrendingUp,
   },
